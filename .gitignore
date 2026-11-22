@@ -1,0 +1,13 @@
+_evidence_source/
+.build/
+.DS_Store
+__pycache__/
+*.pyc
+.env
+.env.*
+credentials*
+data/raw/
+checkpoints/
+.chart-data-*/
+node_modules/
+**/node_modules

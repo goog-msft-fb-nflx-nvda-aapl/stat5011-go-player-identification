@@ -1,0 +1,14 @@
+{
+  "slides": 22,
+  "native_charts": 6,
+  "native_tables": 5,
+  "embedded_chart_workbooks": 6,
+  "package_integrity": "passed",
+  "layout_and_fonts": "passed",
+  "artifact_tool_import": "passed",
+  "native_chart_structure": "passed",
+  "powerpoint_native_open_tested": false,
+  "visual_review": "Slides rendered and reviewed; report ten pages rendered and reviewed.",
+  "presentation_sha256": "46fb6704af275d229741e1af76a5df8083af3e022c6d7de16f57eee05facce3d",
+  "office_rendering": "Final PPTX rendered through LibreOffice, 22 pages; repaired slides checked."
+}

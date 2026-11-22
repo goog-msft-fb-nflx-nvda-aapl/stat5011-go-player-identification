@@ -1,0 +1,80 @@
+{
+  "training_games": 1000000,
+  "training_players": 8007,
+  "player_game_histogram": {
+    "labels": [
+      "1-14",
+      "15-29",
+      "30-59",
+      "60-119",
+      "120-239",
+      "240+"
+    ],
+    "counts": [
+      1015,
+      1672,
+      1615,
+      1244,
+      1187,
+      1274
+    ]
+  },
+  "test_pools": {
+    "original_public": {
+      "questions": 400,
+      "query_game_counts": {
+        "15": 100,
+        "5": 100,
+        "20": 100,
+        "10": 100
+      },
+      "candidate_players": 400,
+      "reference_games": 40000,
+      "games_per_reference_player": {
+        "100": 400
+      }
+    },
+    "new_public": {
+      "questions": 400,
+      "query_game_counts": {
+        "3": 100,
+        "5": 100,
+        "1": 100,
+        "2": 100
+      },
+      "candidate_players": 600,
+      "reference_games": 6000,
+      "games_per_reference_player": {
+        "10": 600
+      }
+    },
+    "original_private": {
+      "questions": 400,
+      "query_game_counts": {
+        "20": 100,
+        "15": 100,
+        "10": 100,
+        "5": 100
+      },
+      "candidate_players": 400,
+      "reference_games": 40000,
+      "games_per_reference_player": {
+        "100": 400
+      }
+    },
+    "new_private": {
+      "questions": 400,
+      "query_game_counts": {
+        "3": 100,
+        "2": 100,
+        "1": 100,
+        "5": 100
+      },
+      "candidate_players": 600,
+      "reference_games": 6000,
+      "games_per_reference_player": {
+        "10": 600
+      }
+    }
+  }
+}

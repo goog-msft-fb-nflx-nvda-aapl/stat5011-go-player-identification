@@ -1,0 +1,203 @@
+{
+  "scope": "6000 training identities, 90000 games, no holdout training identities",
+  "selected": {
+    "tag": "lda_s0.5_d128",
+    "shrinkage": 0.5,
+    "dimension": 128,
+    "weight": 0.25,
+    "development_by_k": {
+      "1": 0.4960033288032218,
+      "2": 0.7452062492733441,
+      "3": 0.8382770008495125,
+      "5": 0.9166125880945433
+    },
+    "development_mean": 0.7490247917551554
+  },
+  "development_baseline_by_k": {
+    "1": 0.47965118531117507,
+    "2": 0.739186572013267,
+    "3": 0.8281769556356886,
+    "5": 0.9140591800535447
+  },
+  "audit_baseline_by_k": {
+    "1": 0.45966506097924986,
+    "2": 0.6921869073085738,
+    "3": 0.7980218428046161,
+    "5": 0.8917050217273527
+  },
+  "audit_selected_by_k": {
+    "1": 0.4722444999110406,
+    "2": 0.7010883292141074,
+    "3": 0.8069594544960674,
+    "5": 0.8962033159129762
+  },
+  "audit_gain": 0.008729191678599757,
+  "training_players": 6000,
+  "history": [
+    {
+      "tag": "lda_s0.1_d64",
+      "shrinkage": 0.1,
+      "dimension": 64,
+      "weight": 0.05,
+      "development_by_k": {
+        "1": 0.4840882493418522,
+        "2": 0.7422735528536266,
+        "3": 0.8327075672413375,
+        "5": 0.9153739755789168
+      },
+      "development_mean": 0.7436108362539333
+    },
+    {
+      "tag": "lda_s0.1_d64",
+      "shrinkage": 0.1,
+      "dimension": 64,
+      "weight": 0.1,
+      "development_by_k": {
+        "1": 0.4876713343546579,
+        "2": 0.7424807004736238,
+        "3": 0.834687583042192,
+        "5": 0.9148841657042045
+      },
+      "development_mean": 0.7449309458936696
+    },
+    {
+      "tag": "lda_s0.1_d64",
+      "shrinkage": 0.1,
+      "dimension": 64,
+      "weight": 0.25,
+      "development_by_k": {
+        "1": 0.4938799546145189,
+        "2": 0.7431575365966723,
+        "3": 0.8364865440393915,
+        "5": 0.9133328256791262
+      },
+      "development_mean": 0.7467142152324273
+    },
+    {
+      "tag": "lda_s0.1_d128",
+      "shrinkage": 0.1,
+      "dimension": 128,
+      "weight": 0.05,
+      "development_by_k": {
+        "1": 0.4809068877071554,
+        "2": 0.7418561460664248,
+        "3": 0.8321522554033102,
+        "5": 0.9142647638998828
+      },
+      "development_mean": 0.7422950132691932
+    },
+    {
+      "tag": "lda_s0.1_d128",
+      "shrinkage": 0.1,
+      "dimension": 128,
+      "weight": 0.1,
+      "development_by_k": {
+        "1": 0.4855069805501361,
+        "2": 0.7439041545507628,
+        "3": 0.8338868678898883,
+        "5": 0.9153703853265558
+      },
+      "development_mean": 0.7446670970793356
+    },
+    {
+      "tag": "lda_s0.1_d128",
+      "shrinkage": 0.1,
+      "dimension": 128,
+      "weight": 0.25,
+      "development_by_k": {
+        "1": 0.4970821813561502,
+        "2": 0.7406295316705236,
+        "3": 0.8360315644509348,
+        "5": 0.9126043632608374
+      },
+      "development_mean": 0.7465869101846114
+    },
+    {
+      "tag": "lda_s0.5_d64",
+      "shrinkage": 0.5,
+      "dimension": 64,
+      "weight": 0.05,
+      "development_by_k": {
+        "1": 0.4825675415913288,
+        "2": 0.7418123211029454,
+        "3": 0.8323159050154981,
+        "5": 0.9144629023518143
+      },
+      "development_mean": 0.7427896675153967
+    },
+    {
+      "tag": "lda_s0.5_d64",
+      "shrinkage": 0.5,
+      "dimension": 64,
+      "weight": 0.1,
+      "development_by_k": {
+        "1": 0.4859875425886225,
+        "2": 0.7437362870235528,
+        "3": 0.8350843095833987,
+        "5": 0.9156357728399775
+      },
+      "development_mean": 0.7451109780088878
+    },
+    {
+      "tag": "lda_s0.5_d64",
+      "shrinkage": 0.5,
+      "dimension": 64,
+      "weight": 0.25,
+      "development_by_k": {
+        "1": 0.4923275295480899,
+        "2": 0.7433113582851167,
+        "3": 0.8373568156488377,
+        "5": 0.9158115722352486
+      },
+      "development_mean": 0.7472018189293232
+    },
+    {
+      "tag": "lda_s0.5_d128",
+      "shrinkage": 0.5,
+      "dimension": 128,
+      "weight": 0.05,
+      "development_by_k": {
+        "1": 0.48399986897388025,
+        "2": 0.7407906234882168,
+        "3": 0.8327848498965563,
+        "5": 0.9150061541174113
+      },
+      "development_mean": 0.7431453741190162
+    },
+    {
+      "tag": "lda_s0.5_d128",
+      "shrinkage": 0.5,
+      "dimension": 128,
+      "weight": 0.1,
+      "development_by_k": {
+        "1": 0.48542285880955294,
+        "2": 0.7440007674937866,
+        "3": 0.8345518073617013,
+        "5": 0.9161873178234691
+      },
+      "development_mean": 0.7450406878721275
+    },
+    {
+      "tag": "lda_s0.5_d128",
+      "shrinkage": 0.5,
+      "dimension": 128,
+      "weight": 0.25,
+      "development_by_k": {
+        "1": 0.4960033288032218,
+        "2": 0.7452062492733441,
+        "3": 0.8382770008495125,
+        "5": 0.9166125880945433
+      },
+      "development_mean": 0.7490247917551554
+    }
+  ],
+  "limitations": [
+    "Audit identities were used in earlier experiments; newly reserved audit rows are excluded from this experiment setting selection, but are not a pristine holdout.",
+    "Pool has 600 identities, with separate 300-query-row development and audit subsets.",
+    "Website evaluation pending; all November 20 slots exhausted."
+  ],
+  "candidate_file": "PROJECT_ROOT/reproduction/policy_expanded_lda1122/go23_expand.csv",
+  "candidate_sha256": "9230926b6adcb238a8a56b056a3353445d8e1b60f9f086cd780d9cca726e8b88",
+  "public_score": null,
+  "changed_top1_vs_parent": 153
+}

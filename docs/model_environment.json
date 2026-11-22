@@ -1,0 +1,12 @@
+{
+  "python": "3.11.17",
+  "packages": {
+    "torch": "2.6.0+cu124",
+    "numpy": "2.3.5",
+    "scipy": "1.17.1",
+    "pandas": "2.3.3",
+    "lightgbm": "4.7.0",
+    "scikit-learn": "1.9.0"
+  },
+  "hardware": "Shared H200 GPU server; package versions read on November22, 2026."
+}

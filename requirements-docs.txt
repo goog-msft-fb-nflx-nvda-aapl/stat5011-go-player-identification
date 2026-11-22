@@ -1,0 +1,5 @@
+python-docx==1.2.0
+matplotlib==3.11.2
+pillow==13.0.0
+numpy==2.5.5
+PyMuPDF==2.1
