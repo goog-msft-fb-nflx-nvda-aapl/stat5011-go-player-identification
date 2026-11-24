@@ -1,0 +1,11 @@
+{
+  "name": "g24_weight.csv",
+  "sha256": "f82029320aea61ae1c17ddffff5ffa5dd99ef874e6abb4021b48f8e6808e2da1",
+  "state": "scored",
+  "quota_before": 2,
+  "requested_utc": "2026-11-23T16:41:20.601378+00:00",
+  "backup_release": "go-final-four-20261124",
+  "hypothesis": "Increase expanded diagonal Gaussian weight from .10 to .15.",
+  "public_score": 0.870217,
+  "quota_after": 3
+}

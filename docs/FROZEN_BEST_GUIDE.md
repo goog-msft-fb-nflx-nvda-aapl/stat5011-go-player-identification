@@ -1,36 +1,55 @@
-# Task 1 best on November 22: 0.8686865
+# Task1 best on November23 — 0.8721950
 
-`g22_cx40.csv` scored **0.8686865**. SHA-256 `123a07fc353790bc983a76862d10db96e03399df4160a3e7af44deb293b61fdb`. Exact CSV is `go/submissions/g22_cx40.csv`; receipt and all five outcomes are under `go/runs/` and `go/reproduction/20261122/submission_state.json`. The later LM6 test scored .8682102, so preserve this earlier best for the user's manual November24 final upload.
+The fifth November23 upload, **g23_greplace.csv**, scored **0.8721950** and placed TEAM_10990 at **19/127** in the captured leaderboard. All five daily slots were used. This final exploratory upload is also the strongest known artifact. November24's final website upload is **manual by the user**.
 
-## Restore official data, environment and models
+Prediction SHA-256:
 
-Follow `REPRODUCE_TASK1_BEST_20261121.md` for the pinned Python3.11/PyTorch2.6 environment, official dataset paths, frozen parent, HumanSL feature extraction, MLP model and LDA model. Official v1.1 archive SHA-256 is `e0880a3e8723f776e931ecce7fbc09eace9a0dd42b18a1d8ebac4a1628d2395e`. Training CSVs belong under PROJECT_ROOT/data/training and official test CSVs under PROJECT_ROOT/data/tests1v2/tests. External HumanSL source/model/license are preserved in the policy pilot release; retain all notices.
+```text
+eac2f9120aff4dd74102d08b2cbcc3e2cf9009d976fd80a63890b371deacde26
+```
 
-Additionally restore private release `go-next-experiments-20261119` assets `cx40_lm4_noaug_all_training.tar.gz` and `cx40_lm4_noaug_all_inference.tar.gz` preserving paths. The former contains the selected LM4-derived player encoder and training source/settings; the latter contains its inference source/settings and fusion results. Required score arrays are `reproduction/experiments_1119/runs/cx40_lm4_noaug_all/results/Sfinal_newmember_candidate_{pub2,priv2}.npy`.
+## Saved models and input placement
 
-The selected encoder was predefined epoch2 of a four-epoch run: LM4 initialization, seed0, learning rate .0001, ArcFace scale20/margin .1, all training identities, no orientation augmentation. Exact commands are in `go/reproduction/20261119/next_experiment_jobs.json`. Model hash, selected checkpoint and frozen training dependencies are recorded in the cx40 training archive.
+Use the recorded Python3.11.17 / PyTorch2.6.0+cu124 environment; CPU inference has also been verified in this same installation. The existing parent guides record full package versions. Set PROJECT_ROOT to an absolute restored workspace. Copy this release's `go/src/` into PROJECT_ROOT/src.
 
-## Reproduce predictions from saved models
+Restore the following private release assets, preserving archive-relative paths:
 
-Copy this release's go/src files into PROJECT_ROOT/src. Restore all Nov21 dependencies, plus the cx40 fusion above, then run:
+- `go-best-20261122` and its linked parent dependencies: original-family prediction template, parent controls and LM4/cx40 fusion. Full restoration is documented in REPRODUCE_TASK1_BEST_20261122.md.
+- `go-next-experiments-20261119`: cx40 training and inference archives. Required coordinate arrays are `reproduction/experiments_1119/runs/cx40_lm4_noaug_all/results/Sfinal_newmember_candidate_{pub2,priv2}.npy`.
+- `go-policy-candidate-20261119`: `reproduction/policy_test1119/{pub2,priv2}_features.npz`, including question IDs, player ordering and reference/query indexing.
+- `go-policy-metric-20261120`: `reproduction/policy_metric1119/policy_metric.pt`, containing the selected MLP and its fitted scaler.
+- `go-policy-expansion-20261122`: `reproduction/policy_expanded_lda1122/policy_lda.npz`, containing the 6,000-player LDA projection and its fitted scaler. The two training feature shards, training-source version and selection evidence are preserved in that release.
+- `go-tomorrow-five-20261123`: candidate manifest, settings, input hashes, source and independent five-CSV replay evidence.
+
+The parent control additionally requires `reproduction/cx38_candidate_pipeline1118/sub/go19_nover.csv`, `results/Sfinal_review_candidate_{pub2,priv2}.npy` and `results/S_{pub2,priv2}_pids.npy`. Braces indicate two filenames, not a literal path.
+
+## Exact prediction command
 
 ```bash
 export PROJECT_ROOT=/absolute/path/to/restored/project
-CUDA_VISIBLE_DEVICES=0 OMP_NUM_THREADS=4 OPENBLAS_NUM_THREADS=4 python "$PROJECT_ROOT/src/codex_reproduce_best1122.py" --root "$PROJECT_ROOT" --device cuda
+OMP_NUM_THREADS=4 OPENBLAS_NUM_THREADS=4 MKL_NUM_THREADS=4 \
+  python "$PROJECT_ROOT/src/codex_reproduce_best1123.py" \
+  --root "$PROJECT_ROOT" --device cpu
 ```
 
-Output is `reproduction/best1122/g22_cx40.csv`. It verifies the previous policy control, recomputes MLP game embeddings and the shrunk Gaussian score from the saved LDA model and individual reference games, then applies `z(cx40 fusion) + .25*z(MLP cosine) + .1*z(Gaussian)`. It refuses a mismatch with the scored CSV hash and saves inference_verification.json. Original-family rows remain inherited from the accepted parent.
+CUDA inference is available with `--device cuda` and a suitable CUDA_VISIBLE_DEVICES setting. The tested command writes `reproduction/best1123/g23_greplace.csv` and `inference_verification.json`. It first checks the preserved MLP control and then refuses any mismatch with the actual scored CSV hash.
 
-To regenerate the cx40 fusion from its encoder checkpoint, restore the full cx40 inference workspace and parent dependencies and run:
+The command recomputes MLP game embeddings from the saved checkpoint, and recomputes Gaussian scores from the expanded saved LDA model and individual reference-game features. The accepted formula is:
 
-```bash
-CUDA_VISIBLE_DEVICES=0 PYTHONHASHSEED=0 python "$PROJECT_ROOT/src/codex_new_member_nov_1119.py" --root "$PROJECT_ROOT/reproduction/experiments_1119/runs/cx40_lm4_noaug_all" --mode inference
+```text
+z(cx40 coordinate fusion) + 0.25*z(MLP cosine) + 0.10*z(expanded Gaussian)
 ```
 
-The run workspace's reproduction/new_member_config.json, src files, selected model, parent arrays and official test paths must be restored from the frozen archives first. This command asserts the inherited parent control before inferring and fusing the new encoder.
+The older 1,000-player Gaussian contributes **zero**. No expanded cosine score is added. The expanded projection has 128 dimensions and within-class shrinkage .5. Candidate-specific diagonal reference variance is shrunk .8 toward the pooled variance, with a 1e-5 floor. Mean-set uncertainty uses 1/query_games + 1/10. All weights are global; no individual predictions were manually edited.
 
-## Compact cached replay and verification scope
+## Official data and training
 
-Private release `go-daily-candidates-20261122` / `daily_candidates1122.tar.gz` preserves all score inputs with hashes, per-candidate settings, source and predictions. Running `codex_daily_candidates1122.py --root PROJECT_ROOT` with an absent output directory reproduces these candidates and asserts the Nov21 control. No per-question predictions are manually edited.
+Official v1.1 archive SHA-256 is `e0880a3e8723f776e931ecce7fbc09eace9a0dd42b18a1d8ebac4a1628d2395e`. Official training CSVs belong under PROJECT_ROOT/data/training; updated test files under PROJECT_ROOT/data/tests1v2/tests. Parent preprocessing produces data/train_arr.npz.
 
-Saved-model policy inference from frozen cx40 fusion and extracted HumanSL features is verified byte-exact. The inherited raw-parent base-view mismatch remains documented in the Nov21 guide. A separate raw reconstruction was evaluated at .8670060 and preserved; it is not the accepted best. Full raw-data equality of the accepted parent remains unresolved.
+The MLP uses the original 1,000-player training feature sample. The expanded LDA uses that sample plus two disjoint 2,500-player shards, totaling 90,000 games from 6,000 players, excluding the fixed 800-player holdout. Raw extraction source is codex_policy_expand1122.py; fitting/selection source is codex_policy_expand_fit1122.py. Original and expanded feature arrays, sample indices, logs and models are in the frozen policy releases. HumanSL source/checkpoint and license are preserved in go-policy-residual-pilot-20261119; retain all copyright notices.
+
+Local development/audit rows are recorded in the candidate pack. The replacement variant was fixed before those checks and had only a small local audit gain; its improvement here is the actual competition result. Preserve negative experiments in the dated state.
+
+## Verification scope
+
+The CPU saved-model command was verified byte-exact from frozen coordinate fusion and extracted policy features. The inherited raw-parent base-view reconstruction discrepancy remains documented in prior guides; full raw-input equality is not claimed. Prior strongest releases remain intact. Score receipts and the complete November23 experiment ledger are under go/reproduction/20261123/requests and submission_state.json.

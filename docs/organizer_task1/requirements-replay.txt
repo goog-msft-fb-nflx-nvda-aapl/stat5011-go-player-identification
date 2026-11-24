@@ -1,0 +1,4 @@
+# Python 3.11.17. Tested with torch 2.6.0+cu124 while executing on CPU.
+--extra-index-url https://download.pytorch.org/whl/cu124
+numpy==2.3.5
+torch==2.6.0+cu124

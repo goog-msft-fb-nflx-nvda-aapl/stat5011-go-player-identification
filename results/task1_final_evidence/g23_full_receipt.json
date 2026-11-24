@@ -1,0 +1,11 @@
+{
+  "name": "g23_full.csv",
+  "sha256": "bed8a7054a1bd595589f93d4b2534cda84733669480d5022d94d6fd88a04aa52",
+  "state": "scored",
+  "quota_before": 0,
+  "requested_utc": "2026-11-22T16:08:34.777254+00:00",
+  "backup_release": "go-tomorrow-five-20261123",
+  "hypothesis": "Transfer the expanded metric selected locally to the best LM4 combination",
+  "public_score": 0.8672784,
+  "quota_after": 1
+}

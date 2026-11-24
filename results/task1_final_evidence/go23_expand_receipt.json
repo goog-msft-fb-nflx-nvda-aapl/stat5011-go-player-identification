@@ -1,0 +1,11 @@
+{
+  "name": "go23_expand.csv",
+  "sha256": "9230926b6adcb238a8a56b056a3353445d8e1b60f9f086cd780d9cca726e8b88",
+  "state": "scored",
+  "quota_before": 2,
+  "requested_utc": "2026-11-22T16:09:23.071699+00:00",
+  "backup_release": "go-tomorrow-five-20261123",
+  "hypothesis": "expanded metric original",
+  "public_score": 0.8664436,
+  "quota_after": 3
+}

@@ -1,0 +1,11 @@
+{
+  "name": "g23_gadd.csv",
+  "sha256": "fcaf0e40ef274dd97e70db4e3baf2480a2f937b0e00a606d960df4dd850ec22f",
+  "state": "scored",
+  "quota_before": 1,
+  "requested_utc": "2026-11-22T16:08:56.607671+00:00",
+  "backup_release": "go-tomorrow-five-20261123",
+  "hypothesis": "Add complementary Gaussian matching learned from 6000 identities",
+  "public_score": 0.8695535,
+  "quota_after": 2
+}

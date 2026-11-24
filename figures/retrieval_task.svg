@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-11-22T22:16:23.123508</dc:date>
+    <dc:date>2026-11-25T01:17:21.329469</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -40,7 +40,7 @@ Q 27.203774 49.836 27.203774 50.892
 L 27.203774 98.148
 Q 27.203774 99.204 31.415094 99.204
 z
-" clip-path="url(#p4df2e9ab4f)" style="fill: #ffffff; stroke: #1c6070; stroke-width: 1.5; stroke-linejoin: miter"/>
+" clip-path="url(#p37e1a3d144)" style="fill: #ffffff; stroke: #1c6070; stroke-width: 1.5; stroke-linejoin: miter"/>
    </g>
    <g id="patch_3">
     <path d="M 194.603774 99.204
@@ -53,7 +53,7 @@ Q 190.392453 49.836 190.392453 50.892
 L 190.392453 98.148
 Q 190.392453 99.204 194.603774 99.204
 z
-" clip-path="url(#p4df2e9ab4f)" style="fill: #ffffff; stroke: #1c6070; stroke-width: 1.5; stroke-linejoin: miter"/>
+" clip-path="url(#p37e1a3d144)" style="fill: #ffffff; stroke: #1c6070; stroke-width: 1.5; stroke-linejoin: miter"/>
    </g>
    <g id="patch_4">
     <path d="M 384.113208 63.564
@@ -66,7 +66,7 @@ Q 379.901887 28.716 379.901887 29.772
 L 379.901887 62.508
 Q 379.901887 63.564 384.113208 63.564
 z
-" clip-path="url(#p4df2e9ab4f)" style="fill: #ffffff; stroke: #1c6070; stroke-width: 1.5; stroke-linejoin: miter"/>
+" clip-path="url(#p37e1a3d144)" style="fill: #ffffff; stroke: #1c6070; stroke-width: 1.5; stroke-linejoin: miter"/>
    </g>
    <g id="patch_5">
     <path d="M 384.113208 120.324
@@ -79,7 +79,7 @@ Q 379.901887 85.476 379.901887 86.532
 L 379.901887 119.268
 Q 379.901887 120.324 384.113208 120.324
 z
-" clip-path="url(#p4df2e9ab4f)" style="fill: #ffffff; stroke: #1c6070; stroke-width: 1.5; stroke-linejoin: miter"/>
+" clip-path="url(#p37e1a3d144)" style="fill: #ffffff; stroke: #1c6070; stroke-width: 1.5; stroke-linejoin: miter"/>
    </g>
    <g id="text_1">
     <!-- Query set -->
@@ -1181,7 +1181,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="p4df2e9ab4f">
+  <clipPath id="p37e1a3d144">
    <rect x="7.2" y="7.2" width="558" height="138.6"/>
   </clipPath>
  </defs>

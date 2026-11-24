@@ -1,0 +1,13 @@
+{
+  "snapshot_jst": "2026-11-22T07:08:00+09:00",
+  "team": "TEAM_10990",
+  "best_public_score": 0.8686865,
+  "rank": 20,
+  "ranked_teams": 125,
+  "leader_score": 0.9313515,
+  "gap_to_leader": 0.062665,
+  "best_file": "g22_cx40.csv",
+  "best_sha256": "123a07fc353790bc983a76862d10db96e03399df4160a3e7af44deb293b61fdb",
+  "source_release": "go-best-20261122",
+  "status": "Interim results; competition deadline November24; private final ranking not known."
+}

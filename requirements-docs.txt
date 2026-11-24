@@ -3,3 +3,6 @@ matplotlib==3.11.2
 pillow==13.0.0
 numpy==2.5.5
 PyMuPDF==2.1
+pypdf==6.21.4
+openpyxl==3.1.5
+lxml==6.1.1

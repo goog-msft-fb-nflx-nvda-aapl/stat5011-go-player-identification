@@ -6,18 +6,20 @@
     4,
     5,
     6,
-    7
-  ],
-  "references_pages": [
+    7,
     8
   ],
-  "appendix_pages": [
+  "references_pages": [
     9
   ],
-  "contribution_pages": [
-    10
+  "appendix_pages": [
+    10,
+    11
   ],
-  "total_pages": 10,
+  "contribution_pages": [
+    12
+  ],
+  "total_pages": 12,
   "author": "James Christian",
   "student_id": "R13921031"
 }

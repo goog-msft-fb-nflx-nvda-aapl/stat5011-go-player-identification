@@ -1,8 +1,18 @@
 {
-  "file": "PROJECT_ROOT/reproduction/best1122/g22_cx40.csv",
-  "sha256": "123a07fc353790bc983a76862d10db96e03399df4160a3e7af44deb293b61fdb",
-  "public_score": 0.8686865,
+  "file": "PROJECT_ROOT/reproduction/best1123/g23_greplace.csv",
+  "sha256": "eac2f9120aff4dd74102d08b2cbcc3e2cf9009d976fd80a63890b371deacde26",
+  "public_score": 0.872195,
   "learned_policy_weight": 0.25,
-  "gaussian_weight": 0.1,
-  "verification": "Saved MLP and LDA models plus frozen cx40 encoder fusion scores; byte-exact to evaluated submission"
+  "expanded_gaussian_weight": 0.1,
+  "old_gaussian_weight": 0,
+  "clean_workspace_replay": {
+    "verified": true,
+    "prediction_sha256": "eac2f9120aff4dd74102d08b2cbcc3e2cf9009d976fd80a63890b371deacde26",
+    "verified_inputs": 22,
+    "scope": "Saved-model MLP and expanded Gaussian inference from frozen coordinate fusion and extracted policy features; original-family predictions inherited from declared parent. Not full raw-data inference.",
+    "raw_data_reconstruction_verified": false,
+    "organizer_dataset_included": false,
+    "python": "3.11.17 (main, Oct  1 2026, 20:17:42) [GCC 14.3.0]"
+  },
+  "verification": "Exact saved-model replay from frozen coordinate fusion and extracted policy features; raw-data-only reconstruction remains unverified."
 }

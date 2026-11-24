@@ -1,6 +1,12 @@
 from pathlib import Path
 import json,csv,shutil,re,hashlib
 R=Path(__file__).resolve().parents[1]; E=R/'_evidence_source/server/reproduction'
+# Preserve the finalized, receipt-backed Task1 evidence when rebuilding course outputs.
+if (R/'results/task1_final_evidence').is_dir():
+ import subprocess,sys
+ subprocess.run([sys.executable,str(R/'scripts/verify_results.py')],check=True)
+ print('Final Task1 evidence verified; no historical evidence overwrite performed.')
+ raise SystemExit(0)
 D=json.loads((R/'_evidence_source/course_data_summary1122.json').read_text());(R/'results/data_summary.json').write_text(json.dumps(D,indent=2))
 sub=[]
 for day in [20,21,22]:
