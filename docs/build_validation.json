@@ -1,14 +1,17 @@
 {
-  "slides": 22,
-  "native_charts": 6,
-  "native_tables": 5,
-  "embedded_chart_workbooks": 6,
+  "slides": 30,
+  "native_charts": 8,
+  "native_tables": 6,
+  "embedded_chart_workbooks": 8,
   "package_integrity": "passed",
   "layout_and_fonts": "passed",
   "artifact_tool_import": "passed",
   "native_chart_structure": "passed",
   "powerpoint_native_open_tested": false,
-  "visual_review": "Slides rendered and reviewed; report ten pages rendered and reviewed.",
-  "presentation_sha256": "46fb6704af275d229741e1af76a5df8083af3e022c6d7de16f57eee05facce3d",
-  "office_rendering": "Final PPTX rendered through LibreOffice, 22 pages; repaired slides checked."
+  "visual_review": "Task1 changed slides rendered with LibreOffice and inspected; deck montage scanned. Report 12 pages rendered and inspected.",
+  "presentation_sha256": "5938c2461df68ef0561f4298a47279b1c2560956c6313f94ad609486531cf7cb",
+  "office_rendering": "LibreOffice PDF export, 30 slides",
+  "task1_review_date_jst": "2026-11-25",
+  "task2_content_reviewed": false,
+  "task2_preservation": "Text, shapes, workbooks, data, source and result evidence retained. Two chart-cache decimal strings aligned to unchanged worksheet cells; numerical differences below 1e-11."
 }

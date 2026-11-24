@@ -1,85 +1,37 @@
-# Reproduction
+# Task 1 reproduction
 
-## 1 Official inputs
+The accepted highest public score is **0.8721950**, `g23_greplace.csv`, byte-identical to the last restored `best_872195.csv`. The exact file is `results/best_prediction.csv`; its SHA-256 is:
 
-Obtain the authorized AI CUP 2026 Task 1 v1.1 training data and updated November11 test files from the [official competition](https://www.aidea-web.tw/topic/dc0b799e-690f-4e84-a597-93e68d8ba688). The official data is not bundled here. Archive SHA-256: `e0880a3e8723f776e931ecce7fbc09eace9a0dd42b18a1d8ebac4a1628d2395e`.
-
-Use an absolute `PROJECT_ROOT` directory with this layout:
-
-```text
-PROJECT_ROOT/
-  src/                         model_src/*.py copied here
-  data/training/               official training CSVs
-  data/tests1v2/tests/          updated official test/candidate CSVs
-  results/                     restored frozen parent inputs
-  reproduction/                restored release paths below
-  katago/humanv0.ckpt           licensed pretrained network, for raw extraction
-  katago/kgsrc/python/          pinned KataGo source, for raw extraction
+```
+eac2f9120aff4dd74102d08b2cbcc3e2cf9009d976fd80a63890b371deacde26
 ```
 
-Model inference was tested on the existing Python3.11 / PyTorch2.6 environment on a shared H200 server. The recorded package versions are in `model_environment.json`. Document-building dependencies are separate. Use an isolated environment compatible with the recorded CUDA version. Loading the frozen checkpoints requires trusted inputs; do not substitute untrusted weights.
+## Official inputs and raw extraction
 
-## 2 Restore the frozen assets
+The organizer supplies training CSVs under `PROJECT_ROOT/data/training` and updated original/new candidate/query CSVs under `PROJECT_ROOT/data/tests1v2/tests`. `model_src/prep.py` is part of the archived competition source; `GO_ROOT=PROJECT_ROOT SUBSAMPLE=1 python src/prep.py` regenerates the training cache. Raw datasets and credentials are not bundled. Follow `FROZEN_BEST_GUIDE.md` for exact source/configuration, pinned KataGo source/model/license, extraction, training, parent dependencies and checksums. The accepted expanded projection is at `reproduction/policy_expanded_lda1122/policy_lda.npz`, replacing the older Gaussian projection.
 
-The backing repository is private: `goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect`. An authorized grader must have access to the source and release assets. Existing credentials are never bundled in this course project.
+## Consolidated clean-workspace replay
 
-| Release | Required material |
-|---|---|
-| `task1-reproduction-20261117` | initial parent model, feature, environment and dependency backups |
-| `go-best-20261118` | frozen gate models and auxiliary score dependencies |
-| `go-cx35-experiment-20261118` | selected cx35 model and score delta |
-| `go-review-pipeline-20261118` | selected cx38 checkpoint, training and inference artifacts |
-| `go-best-noverifier-20261119` | accepted .8630397 parent and its reproduction guide |
-| `go-policy-residual-pilot-20261119` | licensed HumanSL model/source, pilot features and notice |
-| `go-policy-candidate-20261119` | full new-family test features and metadata |
-| `go-policy-metric-20261120` | selected MLP checkpoint, scaler and training evidence |
-| `go-policy-setmatch-20261121` | selected LDA checkpoint and Gaussian matching code |
-| `go-next-experiments-20261119` | cx40 training and inference artifacts |
-| `go-best-20261122` | accepted prediction, receipt, verification and source snapshot |
+Authorized graders can receive the compact private release directly or download it from:
+https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/tag/go-organizer-package-20261124
 
-Keep archive-relative paths intact. Follow the full frozen `REPRODUCE_TASK1_BEST_20261122.md` and linked parent guides supplied with the backing source release. The course copy is `docs/FROZEN_BEST_GUIDE.md`.
-
-Required inputs for the final saved-model command include:
-
-```text
-reproduction/cx38_candidate_pipeline1118/sub/go19_nover.csv
-reproduction/cx38_candidate_pipeline1118/results/S_{pub2,priv2}_pids.npy
-reproduction/policy_test1119/{pub2,priv2}_features.npz
-reproduction/policy_metric1119/policy_metric.pt
-reproduction/policy_setmatch1121/policy_lda.npz
-reproduction/experiments_1119/runs/cx40_lm4_noaug_all/results/
-    Sfinal_newmember_candidate_{pub2,priv2}.npy
-```
-
-Braces indicate two separate filenames, not a literal path. Restore frozen parent results as well because the control check requires `Sfinal_review_candidate_{pub2,priv2}.npy`.
-
-## 3 Saved-model inference
+The archive is `organizer_saved_model_replay1124.tar.gz`, SHA-256 `b0b6f144a3c0961566472f680f72112e59df236f273a69aba60af57007f404c8`.
 
 ```bash
-export PROJECT_ROOT=/absolute/path/to/restored/project
-mkdir -p "$PROJECT_ROOT/src"
-cp model_src/*.py "$PROJECT_ROOT/src/"
-CUDA_VISIBLE_DEVICES=0 OMP_NUM_THREADS=4 OPENBLAS_NUM_THREADS=4 \
-  python "$PROJECT_ROOT/src/codex_reproduce_best1122.py" \
-  --root "$PROJECT_ROOT" --device cuda
+python3.11 -m venv .model-venv
+. .model-venv/bin/activate
+python -m pip install -r docs/organizer_task1/requirements-replay.txt
+python docs/organizer_task1/reproduce.py \
+  --archive /absolute/path/to/organizer_saved_model_replay1124.tar.gz \
+  --workspace /absolute/path/to/EMPTY-workspace
 ```
 
-Choose a GPU with adequate capacity. The script regenerates MLP embeddings and Gaussian scores from saved models and policy features, checks the previous control, fuses them with the frozen cx40 coordinate scores, and writes `reproduction/best1122/g22_cx40.csv`.
+The runner validates all22 input hashes and regenerates MLP embeddings and expanded Gaussian matching on CPU. Output is `EMPTY-workspace/reproduction/best1123/g23_greplace.csv`; it rejects a different hash. The archive includes no official CSVs. It **does** contain declared derived policy features, frozen coordinate-fusion scores and inherited original-family predictions. These are not presented as raw-data inference or trained weights. `results/best_inference_verification.json` records the passed empty-workspace replay using the recorded server environment; a newly installed dependency environment was not separately tested.
 
-Expected prediction SHA-256:
+For the full competition restoration chain see `FROZEN_BEST_GUIDE.md` and the backing source at the organizer release tag. The updated entry point `model_src/codex_reproduce_best1123.py` uses the same preserved MLP and an expanded LDA learned from90,000 games/6,000 identities. Final score is `z(cx40) + .25*z(MLP cosine) + .10*z(expanded Gaussian)`. Expanded cosine and the older Gaussian have zero final weights.
 
-```text
-123a07fc353790bc983a76862d10db96e03399df4160a3e7af44deb293b61fdb
-```
+## Verification boundary
 
-The script rejects a mismatch and writes `inference_verification.json`. This exact inference was checked on the server before the frozen best release was created. A copied evidence record is in `results/best_inference_verification.json`.
+Saved-model replay is byte-exact. The inherited legacy base-view component still changes lower-ranked predictions when rebuilt from raw official CSVs. Full raw-data reconstruction is unresolved. A separate raw-input alternative scored.8670060 and is not the accepted best. Source availability and a report do not alone establish compliance with an organizer's full reproducibility requirement.
 
-## 4 Raw extraction and training
-
-Coordinate training source, language-model initialization, selected checkpoint and commands are in the cx40 training archive. Frozen HumanSL extraction uses `codex_policy_residual_pilot_1119.py` for training/holdout and `codex_policy_test_features_1119.py` for test pools. `codex_policy_metric1119.py` trains the MLP; `codex_policy_lda1120.py` and `codex_policy_setmatch1121.py` fit/evaluate the LDA and reference matching. Run the frozen preprocessing first to obtain `data/train_arr.npz`, and restore the six heldout embedding caches and `HO_meta.npz` for local comparisons. These are dependencies of selection, not test labels.
-
-The expanded study uses two `codex_policy_expand1122.py --training --shard {0,1}` processes followed by `codex_policy_expand_fit1122.py`. It adds 5,000 disjoint training players to the existing 1,000, selecting 15 games per player. Its snapshot had no public evaluation yet.
-
-## 5 Scope and known limitation
-
-Saved-model inference using frozen coordinate scores and extracted policy features reproduces the scored CSV exactly. The legacy base-view component still changes some lower ranks when reconstructed from raw inputs. The separate raw reconstruction scored .8670060; it is not the accepted best. Consequently full raw-input equality is unresolved. The course materials disclose this limitation rather than treating an archived prediction alone as full training reproducibility.
+The submission period has ended. The course copy reports the dated public best, not a verified final private result. Task2 reproduction is independently preserved in `task2/REPRODUCE_TASK2_BEST.md`.

@@ -1,0 +1,498 @@
+{
+  "repo": "goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect",
+  "historical_releases": [
+    {
+      "tag": "go-tomorrow-five-20261123",
+      "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/tag/go-tomorrow-five-20261123",
+      "assets": [
+        {
+          "name": "tomorrow_five1123.tar.gz",
+          "bytes": 7721170,
+          "digest": "sha256:0b80412c704f2eacacd50daad3c5ae7cdb018d3ac462c2f9de5070a5ad87e45a",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/go-tomorrow-five-20261123/tomorrow_five1123.tar.gz"
+        }
+      ]
+    },
+    {
+      "tag": "go-final-four-20261124",
+      "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/tag/go-final-four-20261124",
+      "assets": [
+        {
+          "name": "final_four1124.tar.gz",
+          "bytes": 317528,
+          "digest": "sha256:f103748d0d1ab0bc4013694e3e97cadadcea87c5858aafa7dc78f49b77931429",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/go-final-four-20261124/final_four1124.tar.gz"
+        }
+      ]
+    },
+    {
+      "tag": "go-best-20261123",
+      "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/tag/go-best-20261123",
+      "assets": [
+        {
+          "name": "best_inference_verification.json",
+          "bytes": 486,
+          "digest": "sha256:e59a564f796a6b04b5f8f80cb2fdf780827fc9d5a2c3e9d0872dbe0ac8a5f28f",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/go-best-20261123/best_inference_verification.json"
+        },
+        {
+          "name": "g23_greplace.csv",
+          "bytes": 116843,
+          "digest": "sha256:eac2f9120aff4dd74102d08b2cbcc3e2cf9009d976fd80a63890b371deacde26",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/go-best-20261123/g23_greplace.csv"
+        },
+        {
+          "name": "g23_greplace_receipt.json",
+          "bytes": 774,
+          "digest": "sha256:8a5a00b85be31d3319ca717ec019b0c8436261b6ec2dc886ad57a9dd7e0d8876",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/go-best-20261123/g23_greplace_receipt.json"
+        },
+        {
+          "name": "submission_state.json",
+          "bytes": 4520,
+          "digest": "sha256:4e3d96c9ad39b3aacd6b0b9e08751ff384a3074477627715cea9a8f5af4b2ab3",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/go-best-20261123/submission_state.json"
+        }
+      ]
+    },
+    {
+      "tag": "go-policy-expansion-20261122",
+      "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/tag/go-policy-expansion-20261122",
+      "assets": [
+        {
+          "name": "policy_expand1122_0.tar.gz",
+          "bytes": 178298647,
+          "digest": "sha256:8e556f5f21b18d3cf28919a0f810b34bd18bd44049732d1f20fbf1e0c6ffea46",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/go-policy-expansion-20261122/policy_expand1122_0.tar.gz"
+        },
+        {
+          "name": "policy_expand1122_1.tar.gz",
+          "bytes": 178295463,
+          "digest": "sha256:e22189c2b0ee6ec3a65c0fb9716f81ba64f02422ec1ea3bdf1487c00c18eb1cd",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/go-policy-expansion-20261122/policy_expand1122_1.tar.gz"
+        },
+        {
+          "name": "policy_expanded_lda1122.tar.gz",
+          "bytes": 3940430,
+          "digest": "sha256:b3fdfea729c250cb11151d5df6f5871a77df60a7cac7393d783b2d70778c5ab6",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/go-policy-expansion-20261122/policy_expanded_lda1122.tar.gz"
+        }
+      ]
+    },
+    {
+      "tag": "go-policy-residual-pilot-20261119",
+      "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/tag/go-policy-residual-pilot-20261119",
+      "assets": [
+        {
+          "name": "humanv0.ckpt",
+          "bytes": 323752318,
+          "digest": "sha256:84b23476b56a73a775a0f09bad7d1c5c435690adb343aa851e80bf198c0c8b27",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/go-policy-residual-pilot-20261119/humanv0.ckpt"
+        },
+        {
+          "name": "KATAGO_NETWORK_LICENSE.txt",
+          "bytes": 1219,
+          "digest": "sha256:c8e8c103888035d3ffd1ecea1ec183135e9417195cae976c1fcb58a9cffe2f54",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/go-policy-residual-pilot-20261119/KATAGO_NETWORK_LICENSE.txt"
+        },
+        {
+          "name": "policy_residual_pilot1119.tar.gz",
+          "bytes": 42909633,
+          "digest": "sha256:14725a2a293d98ee43ffa171f666a9e4c1d35162d866bad9cac0dc176d019ab2",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/go-policy-residual-pilot-20261119/policy_residual_pilot1119.tar.gz"
+        }
+      ]
+    },
+    {
+      "tag": "go-policy-metric-20261120",
+      "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/tag/go-policy-metric-20261120",
+      "assets": [
+        {
+          "name": "policy_metric1119.tar.gz",
+          "bytes": 72676326,
+          "digest": "sha256:d4365b8cb91d40305607db49af639340af8a203cd83d899978a3724b8073af61",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/go-policy-metric-20261120/policy_metric1119.tar.gz"
+        }
+      ]
+    },
+    {
+      "tag": "go-policy-candidate-20261119",
+      "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/tag/go-policy-candidate-20261119",
+      "assets": [
+        {
+          "name": "policy_test_candidate1119.tar.gz",
+          "bytes": 26676262,
+          "digest": "sha256:f05966a1d9f9efd4907063fc2474e8974945a57a574183b56c076904e7cd7a12",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/go-policy-candidate-20261119/policy_test_candidate1119.tar.gz"
+        }
+      ]
+    },
+    {
+      "tag": "go-next-experiments-20261119",
+      "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/tag/go-next-experiments-20261119",
+      "assets": [
+        {
+          "name": "cx40_lm4_noaug_all_inference.tar.gz",
+          "bytes": 8518845,
+          "digest": "sha256:82501b36a8b28a7922159ffc9c5fefb54e85443ac5deb68fbeea9b7852455e7c",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/go-next-experiments-20261119/cx40_lm4_noaug_all_inference.tar.gz"
+        },
+        {
+          "name": "cx40_lm4_noaug_all_training.tar.gz",
+          "bytes": 150289,
+          "digest": "sha256:5f30a6230db27e87840fa5eb221783f74ff931e47013ba55436523e95ee7d106",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/go-next-experiments-20261119/cx40_lm4_noaug_all_training.tar.gz"
+        },
+        {
+          "name": "cx41_lm4_pair_hold_inference.tar.gz",
+          "bytes": 8519647,
+          "digest": "sha256:0a97584adb33e98d0e451f3f66a7a0cb996ed59dbd484a83df506f57d2dc032a",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/go-next-experiments-20261119/cx41_lm4_pair_hold_inference.tar.gz"
+        },
+        {
+          "name": "cx41_lm4_pair_hold_training.tar.gz",
+          "bytes": 150356,
+          "digest": "sha256:7276f495fcbd887806eb339ede9b225c45ed84b2f056b04a93433ac3324c3796",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/go-next-experiments-20261119/cx41_lm4_pair_hold_training.tar.gz"
+        },
+        {
+          "name": "cx42_lm4_paircon_hold_inference.tar.gz",
+          "bytes": 8522189,
+          "digest": "sha256:404abd14d7f9b5169e1332f969259528ef813b016a51c85355861b385643adaa",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/go-next-experiments-20261119/cx42_lm4_paircon_hold_inference.tar.gz"
+        },
+        {
+          "name": "cx42_lm4_paircon_hold_training.tar.gz",
+          "bytes": 150394,
+          "digest": "sha256:d554fe50f3721eecf1f2bd8318230bbaa7a166c2d220966f3050cc1b51b409dc",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/go-next-experiments-20261119/cx42_lm4_paircon_hold_training.tar.gz"
+        },
+        {
+          "name": "cx43_lm6_noaug_all_inference.tar.gz",
+          "bytes": 8518962,
+          "digest": "sha256:45ba57c4d905d912be5b7c034e696cc4b3b699aff31bb61bba536cc3110cfa16",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/go-next-experiments-20261119/cx43_lm6_noaug_all_inference.tar.gz"
+        },
+        {
+          "name": "cx43_lm6_noaug_all_training.tar.gz",
+          "bytes": 150310,
+          "digest": "sha256:3888e39602252a1bb73a9e5d34af119d66290b785da2964e4cfa993e820f4628",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/go-next-experiments-20261119/cx43_lm6_noaug_all_training.tar.gz"
+        },
+        {
+          "name": "idft_cx40_lm4_noaug_all.pt",
+          "bytes": 829075124,
+          "digest": "sha256:6d44cc780541c286720e715645088b9695bde485ca8861516ea4ab6096040749",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/go-next-experiments-20261119/idft_cx40_lm4_noaug_all.pt"
+        },
+        {
+          "name": "idft_cx41_lm4_pair_hold.pt",
+          "bytes": 828255924,
+          "digest": "sha256:68570da8e9177a7d17772260cf52e21a389eb71e1bb5d47db22e26ec440f05ba",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/go-next-experiments-20261119/idft_cx41_lm4_pair_hold.pt"
+        },
+        {
+          "name": "idft_cx42_lm4_paircon_hold.pt",
+          "bytes": 828256627,
+          "digest": "sha256:22ce44aeb71b241ec19f084aa2a7b92f336a275743d859a1da9de388bb03d338",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/go-next-experiments-20261119/idft_cx42_lm4_paircon_hold.pt"
+        },
+        {
+          "name": "idft_cx43_lm6_noaug_all.pt",
+          "bytes": 1600525972,
+          "digest": "sha256:90f4671358f14221f2303de8fcb3da277578cf2452367d1db749bbd4f825acc1",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/go-next-experiments-20261119/idft_cx43_lm6_noaug_all.pt"
+        }
+      ]
+    },
+    {
+      "tag": "go-review-pipeline-20261118",
+      "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/tag/go-review-pipeline-20261118",
+      "assets": [
+        {
+          "name": "cx38_inference_complete.tar.gz",
+          "bytes": 8519445,
+          "digest": "sha256:e95d63b2665a7ddf79802f21a37b014b7a1755640983edd53f6dd85ad7e5ba98",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/go-review-pipeline-20261118/cx38_inference_complete.tar.gz"
+        },
+        {
+          "name": "cx38_smoke_passed.tar.gz",
+          "bytes": 14212,
+          "digest": "sha256:3430bee0dd7201f1ff3424bb8b288cc3e6a9ba2d6e189758791650ceeef26d22",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/go-review-pipeline-20261118/cx38_smoke_passed.tar.gz"
+        },
+        {
+          "name": "cx38_training_complete.tar.gz",
+          "bytes": 136421,
+          "digest": "sha256:f53cfd06ec2168003ff4c9df439d92c8927f1f64d2aa25e92a2e879847fe357b",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/go-review-pipeline-20261118/cx38_training_complete.tar.gz"
+        },
+        {
+          "name": "idft_cx38_lm4_aug0_bi0_ep2.pt",
+          "bytes": 828255519,
+          "digest": "sha256:8614b9c681ab8fb5986f7de79224c6ff7dc37f805800c9b7147438d6702d8e08",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/go-review-pipeline-20261118/idft_cx38_lm4_aug0_bi0_ep2.pt"
+        },
+        {
+          "name": "idft_cx38_lm4_aug0_bi1_ep2.pt",
+          "bytes": 828255519,
+          "digest": "sha256:bc2dfc89048268bfb87ac1a9f8945420360553f554d913d242060cdb634ca33c",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/go-review-pipeline-20261118/idft_cx38_lm4_aug0_bi1_ep2.pt"
+        },
+        {
+          "name": "idft_cx38_lm4_aug8_bi0_ep3.pt",
+          "bytes": 828255519,
+          "digest": "sha256:c3cf77053ddbcda8c570ccf0ef53a4219de0c3f51139d0f5327c2021f7b39a33",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/go-review-pipeline-20261118/idft_cx38_lm4_aug8_bi0_ep3.pt"
+        },
+        {
+          "name": "idft_cx38_lm4_aug8_bi1_ep3.pt",
+          "bytes": 828255519,
+          "digest": "sha256:b66bc6bf947ada451d5ddd8b93a1febb54acf22c887cffe7b4dc4375ecad801e",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/go-review-pipeline-20261118/idft_cx38_lm4_aug8_bi1_ep3.pt"
+        },
+        {
+          "name": "idft_cx38_selected.pt",
+          "bytes": 828255519,
+          "digest": "sha256:8614b9c681ab8fb5986f7de79224c6ff7dc37f805800c9b7147438d6702d8e08",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/go-review-pipeline-20261118/idft_cx38_selected.pt"
+        }
+      ]
+    },
+    {
+      "tag": "task1-reproduction-20261117",
+      "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/tag/task1-reproduction-20261117",
+      "assets": [
+        {
+          "name": "checkpoint_configs.json",
+          "bytes": 13880,
+          "digest": "sha256:69d139525a507c8eb9edced53edf5e915b557debca1d7624b23dde70be5f1d60",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/task1-reproduction-20261117/checkpoint_configs.json"
+        },
+        {
+          "name": "inputs_manifest.json",
+          "bytes": 78722,
+          "digest": "sha256:041d31a3540242f530a1ec004d30fa10a97483126b97fef8403996d325754bad",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/task1-reproduction-20261117/inputs_manifest.json"
+        },
+        {
+          "name": "release_assets.json",
+          "bytes": 3291,
+          "digest": "sha256:68accd98f2ee3fde1ef905122e06308bd9694e8d35163904f684eac7a512c8a3",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/task1-reproduction-20261117/release_assets.json"
+        },
+        {
+          "name": "task1-score-artifacts-1117.tar.gz",
+          "bytes": 628447040,
+          "digest": "sha256:cc839b15e0c7b563ac942047a8e7532eb6766068096871bd8a869c51fa1184ff",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/task1-reproduction-20261117/task1-score-artifacts-1117.tar.gz"
+        },
+        {
+          "name": "task1-weights-1117.tar.gz.part000",
+          "bytes": 1500000000,
+          "digest": "sha256:b792c5a91d0605115e1f8932fa11a09405e2ed55e63a07b6cdb1bf4ad534e5ca",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/task1-reproduction-20261117/task1-weights-1117.tar.gz.part000"
+        },
+        {
+          "name": "task1-weights-1117.tar.gz.part001",
+          "bytes": 1500000000,
+          "digest": "sha256:7c22a3b7b7f64ed609f002712512c7682ff3d963d0609a8c0ea339602147283c",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/task1-reproduction-20261117/task1-weights-1117.tar.gz.part001"
+        },
+        {
+          "name": "task1-weights-1117.tar.gz.part002",
+          "bytes": 1500000000,
+          "digest": "sha256:421ef15fbeb398cf7baf4bb766894b0b274ad26bc03a73da3c1aab3931c0796f",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/task1-reproduction-20261117/task1-weights-1117.tar.gz.part002"
+        },
+        {
+          "name": "task1-weights-1117.tar.gz.part003",
+          "bytes": 1500000000,
+          "digest": "sha256:3fb4d72e3198783b974dde88ed075a44a377f73be4af8efb850e2f1e5cd0d0bc",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/task1-reproduction-20261117/task1-weights-1117.tar.gz.part003"
+        },
+        {
+          "name": "task1-weights-1117.tar.gz.part004",
+          "bytes": 1500000000,
+          "digest": "sha256:46bbe5f864b32273dd3f8ee49d3b2aa0846b8412cbe9b130249fd82d3607df6e",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/task1-reproduction-20261117/task1-weights-1117.tar.gz.part004"
+        },
+        {
+          "name": "task1-weights-1117.tar.gz.part005",
+          "bytes": 1500000000,
+          "digest": "sha256:d1ba03bc006d3a8002826d1f2405cd3870c218bf1e33cf245b3a79fd3865887a",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/task1-reproduction-20261117/task1-weights-1117.tar.gz.part005"
+        },
+        {
+          "name": "task1-weights-1117.tar.gz.part006",
+          "bytes": 1500000000,
+          "digest": "sha256:30e86e95e91335de88ff1c1c01792fb5f3138075d63b544e0b6a1ec17dafc8eb",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/task1-reproduction-20261117/task1-weights-1117.tar.gz.part006"
+        },
+        {
+          "name": "task1-weights-1117.tar.gz.part007",
+          "bytes": 1500000000,
+          "digest": "sha256:4413630a8a0796d669d55fb82d21001a7847439e5c267a1efaf905b63b65e96d",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/task1-reproduction-20261117/task1-weights-1117.tar.gz.part007"
+        },
+        {
+          "name": "task1-weights-1117.tar.gz.part008",
+          "bytes": 1500000000,
+          "digest": "sha256:85166cd7c125222ca9486e46299c4e2e437dca12a35607f4ba07150b7ca3bef8",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/task1-reproduction-20261117/task1-weights-1117.tar.gz.part008"
+        },
+        {
+          "name": "task1-weights-1117.tar.gz.part009",
+          "bytes": 1500000000,
+          "digest": "sha256:78a6e28be9b4e063c53a88cded4ba77816f06838d7fa96b0470366f5fdd1fa41",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/task1-reproduction-20261117/task1-weights-1117.tar.gz.part009"
+        },
+        {
+          "name": "task1-weights-1117.tar.gz.part010",
+          "bytes": 1500000000,
+          "digest": "sha256:1d5a1206da0dee0d27e16228afbc2ab94ef741cdc7edff3ae125fbdce9c48e99",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/task1-reproduction-20261117/task1-weights-1117.tar.gz.part010"
+        },
+        {
+          "name": "task1-weights-1117.tar.gz.part011",
+          "bytes": 1500000000,
+          "digest": "sha256:0f7a5e7188fe3e5f72e0c4d857cf066101cfb118a481bf1cd1aecdb4d2c02c68",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/task1-reproduction-20261117/task1-weights-1117.tar.gz.part011"
+        },
+        {
+          "name": "task1-weights-1117.tar.gz.part012",
+          "bytes": 1500000000,
+          "digest": "sha256:48d818bc198d2551bebff16ba1a81d97904d01fab45791851ce6b730065633fd",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/task1-reproduction-20261117/task1-weights-1117.tar.gz.part012"
+        },
+        {
+          "name": "task1-weights-1117.tar.gz.part013",
+          "bytes": 1500000000,
+          "digest": "sha256:7965d2d951eb4108b08c3ab021f9bcf86582c060b8cd88ca089410c2c6d09c2c",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/task1-reproduction-20261117/task1-weights-1117.tar.gz.part013"
+        },
+        {
+          "name": "task1-weights-1117.tar.gz.part014",
+          "bytes": 1500000000,
+          "digest": "sha256:17de5959f7f44dc7b7b3055c7816b0f3ab82ce314250a2c816b303ac9001095e",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/task1-reproduction-20261117/task1-weights-1117.tar.gz.part014"
+        },
+        {
+          "name": "task1-weights-1117.tar.gz.part015",
+          "bytes": 655895951,
+          "digest": "sha256:6dfbbd395f24f131bfac2b0bcb6404b22a121a8ad3261215bb30707eacb993d9",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/task1-reproduction-20261117/task1-weights-1117.tar.gz.part015"
+        }
+      ]
+    },
+    {
+      "tag": "go-cx35-experiment-20261118",
+      "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/tag/go-cx35-experiment-20261118",
+      "assets": [
+        {
+          "name": "cx35_checkpoint_assets.json",
+          "bytes": 177,
+          "digest": "sha256:275072df9bf8b2528e639616c824ebee4bbedcea15d294ec6486a20ef0bb8330",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/go-cx35-experiment-20261118/cx35_checkpoint_assets.json"
+        },
+        {
+          "name": "cx35_score_delta.tar.gz",
+          "bytes": 8490058,
+          "digest": "sha256:5aa2833c8ba72224616433f60097c287c674905dc6320a2263944532a4d699bc",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/go-cx35-experiment-20261118/cx35_score_delta.tar.gz"
+        },
+        {
+          "name": "cx35_score_delta_manifest.json",
+          "bytes": 181,
+          "digest": "sha256:642057601a40478592236043e54801fe77f2e11dc03cfb548ec40177ff7f99a8",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/go-cx35-experiment-20261118/cx35_score_delta_manifest.json"
+        },
+        {
+          "name": "cx35_scripts_prediction.tar.gz",
+          "bytes": 33525,
+          "digest": "sha256:e26cb4c3ed1e780d6ca2d1db92cd74b09c4b9bba4073ec390a4e7449f6ab8927",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/go-cx35-experiment-20261118/cx35_scripts_prediction.tar.gz"
+        },
+        {
+          "name": "idft_cx35_lm6.pt",
+          "bytes": 1600521998,
+          "digest": "sha256:e1805155302f04625da24a392a48aef734cc1f11cffc0e83c88390baf84b7467",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/go-cx35-experiment-20261118/idft_cx35_lm6.pt"
+        },
+        {
+          "name": "manifest.json",
+          "bytes": 3961,
+          "digest": "sha256:c9d47d503ffe9b4b60f5ecc8acf1bba219c54def2045349cb6631f3cda4e309f",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/go-cx35-experiment-20261118/manifest.json"
+        }
+      ]
+    },
+    {
+      "tag": "go-best-20261118",
+      "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/tag/go-best-20261118",
+      "assets": [
+        {
+          "name": "checkpoint_configs.json",
+          "bytes": 1110,
+          "digest": "sha256:5057f3d287fdbedd5798d25d145d95afc6a7e8146987cf0de225300537294ee3",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/go-best-20261118/checkpoint_configs.json"
+        },
+        {
+          "name": "environment.json",
+          "bytes": 318,
+          "digest": "sha256:81c14576d93140cd974a34161263954b7235c8ed938f2c0a5b7d5f01f2564355",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/go-best-20261118/environment.json"
+        },
+        {
+          "name": "gate_manifest.json",
+          "bytes": 1672,
+          "digest": "sha256:e9215c4a631da92f24c67c9696bacdaf46066fa714a1e24c3fd6d5804a0a6eaf",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/go-best-20261118/gate_manifest.json"
+        },
+        {
+          "name": "go18_gate_score_delta.tar.gz",
+          "bytes": 290279,
+          "digest": "sha256:60441d80dc4ea5fdd82cc033956ab9f769eb8820c25a3e2e9325a4716dfbf316",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/go-best-20261118/go18_gate_score_delta.tar.gz"
+        },
+        {
+          "name": "go18_gate_weights.tar.part000",
+          "bytes": 1500000000,
+          "digest": "sha256:2f32a378244a4e054536eb30f4e483604726c47d74d40c984e8f4b6ff1a8c2cf",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/go-best-20261118/go18_gate_weights.tar.part000"
+        },
+        {
+          "name": "go18_gate_weights.tar.part001",
+          "bytes": 1500000000,
+          "digest": "sha256:03b3d012ffd92728e744ef932d0146d1dedbfb6fb023ca633480c4a81f09b19e",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/go-best-20261118/go18_gate_weights.tar.part001"
+        },
+        {
+          "name": "go18_gate_weights.tar.part002",
+          "bytes": 1500000000,
+          "digest": "sha256:67a9582bfc95c43e64bde687af7c1c597ebf1b3f8128faf8c355b3461eb2cca8",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/go-best-20261118/go18_gate_weights.tar.part002"
+        },
+        {
+          "name": "go18_gate_weights.tar.part003",
+          "bytes": 597011200,
+          "digest": "sha256:ddc607d7f6015e315f73076b22bb1fba76728c926c7fad33169f2e1eef478219",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/go-best-20261118/go18_gate_weights.tar.part003"
+        },
+        {
+          "name": "release_assets.json",
+          "bytes": 1483,
+          "digest": "sha256:fd6416917d020932f522fedb564406fb9ffb60f1cc9e0f94f543fad10e85f140",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/go-best-20261118/release_assets.json"
+        },
+        {
+          "name": "weight_verification.json",
+          "bytes": 188,
+          "digest": "sha256:5c24f1d71f63eb154483c77e5112584d758b10184ec8028c10d6807bd31762be",
+          "url": "https://github.com/goog-msft-fb-nflx-nvda-aapl/aicup2026-solar-defect/releases/download/go-best-20261118/weight_verification.json"
+        }
+      ]
+    }
+  ],
+  "coverage": "Frozen parent models/source and recent accepted policy components; compact organizer release added separately. Dataset excluded."
+}

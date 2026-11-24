@@ -2,31 +2,36 @@
   "course": "STAT5011 Statistical Deep Learning",
   "author": "James Christian",
   "student_id": "R13921031",
-  "main_report_pages": 7,
+  "main_report_pages": 8,
   "excluded_pages": {
     "references": 1,
-    "appendix": 1,
+    "appendix": 2,
     "contribution": 1
   },
-  "slides": 22,
-  "highest_public_score": 0.8686865,
-  "rank_snapshot": "20/125 on November22,2026",
+  "slides": 30,
+  "highest_public_score": 0.872195,
+  "rank_snapshot": "20/131 at best-restoration upload, November24,2026; not a verified private rank",
   "files": {
     "slides/STAT5011_Final_Presentation.pptx": {
-      "sha256": "46fb6704af275d229741e1af76a5df8083af3e022c6d7de16f57eee05facce3d",
-      "bytes": 110304
+      "sha256": "5938c2461df68ef0561f4298a47279b1c2560956c6313f94ad609486531cf7cb",
+      "bytes": 279923
+    },
+    "slides/STAT5011_Final_Presentation.pdf": {
+      "sha256": "002f3c02971fc745ba7be82d9e0d7d121a9b21879303c63997a03262e4e61db4",
+      "bytes": 504278
     },
     "report/STAT5011_Final_Report.docx": {
-      "sha256": "f9b290af9c6fea0f36018bb2b4a4f8c849bff7d6d67d012ba4edea0382d189d5",
-      "bytes": 441509
+      "sha256": "cde2b9e962ff3409b0c381a54a2fea06164055963a15eb255dc9d9e410dd4684",
+      "bytes": 718195
     },
     "report/STAT5011_Final_Report.pdf": {
-      "sha256": "f7c5057e185e49274c63ff5abf1bd2b44c296dbd062e1be2c51a867fdbc31423",
-      "bytes": 602901
+      "sha256": "8f5b09e2e4070ff054643353e0c3738ace56418512946f9e34ea2afc38556140",
+      "bytes": 878903
     },
     "results/best_prediction.csv": {
-      "sha256": "123a07fc353790bc983a76862d10db96e03399df4160a3e7af44deb293b61fdb",
+      "sha256": "eac2f9120aff4dd74102d08b2cbcc3e2cf9009d976fd80a63890b371deacde26",
       "bytes": 116843
     }
-  }
+  },
+  "task1_review_date": "2026-11-25"
 }

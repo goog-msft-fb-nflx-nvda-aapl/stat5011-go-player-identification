@@ -1,13 +1,16 @@
 {
-  "snapshot_jst": "2026-11-22T07:08:00+09:00",
+  "snapshot_jst": "2026-11-24T01:42:56+09:00",
   "team": "TEAM_10990",
-  "best_public_score": 0.8686865,
+  "best_public_score": 0.872195,
   "rank": 20,
-  "ranked_teams": 125,
+  "ranked_teams": 131,
   "leader_score": 0.9313515,
-  "gap_to_leader": 0.062665,
-  "best_file": "g22_cx40.csv",
-  "best_sha256": "123a07fc353790bc983a76862d10db96e03399df4160a3e7af44deb293b61fdb",
-  "source_release": "go-best-20261122",
-  "status": "Interim results; competition deadline November24; private final ranking not known."
+  "gap_to_leader": 0.0591565,
+  "best_file": "g23_greplace.csv",
+  "best_sha256": "eac2f9120aff4dd74102d08b2cbcc3e2cf9009d976fd80a63890b371deacde26",
+  "source_release": "go-best-20261123",
+  "status": "Competition submission period ended. Public rank is the dated Nov24 upload snapshot, not a verified final private ranking.",
+  "restored_upload": "best_872195.csv",
+  "leader_score_status": "Last observed leader score from Nov24 check; not a private result.",
+  "review_date_jst": "2026-11-25"
 }

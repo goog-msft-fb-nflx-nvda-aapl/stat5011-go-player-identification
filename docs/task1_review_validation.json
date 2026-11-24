@@ -1,0 +1,38 @@
+{
+  "scope": "Task1 review only, November25,2026",
+  "best_public_score": 0.872195,
+  "public_rank_snapshot": "20/131 at November24 best-restoration upload; not a final private rank",
+  "task2_report_page_unchanged": true,
+  "task2_source_evidence_figure_files_identical": 43,
+  "task2_slide_content_preserved": true,
+  "task2_chart_display_values_unchanged": true,
+  "task2_chart_cache_roundoff_alignment": [
+    {
+      "chart": "ppt/charts/chart1.xml",
+      "roundoff_serializations_aligned": 1,
+      "max_allowed_numeric_change": 1e-11
+    },
+    {
+      "chart": "ppt/charts/chart2.xml",
+      "roundoff_serializations_aligned": 1,
+      "max_allowed_numeric_change": 1e-11
+    }
+  ],
+  "report_pages": 12,
+  "main_report_pages": 8,
+  "slide_count": 30,
+  "task1_slides_updated": [
+    1,
+    12,
+    14,
+    15,
+    16,
+    17,
+    27,
+    28,
+    29
+  ],
+  "raw_data_reconstruction_gap_disclosed": true,
+  "rendered_and_reviewed": true,
+  "private_result_verified": false
+}

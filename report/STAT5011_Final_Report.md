@@ -1,10 +1,10 @@
-# Identifying Go Players from Game Records
+# Identifying Go Players and Predicting Their Rank from Game Records
 
 STAT5011 Statistical Deep Learning | James Christian | R13921031
 
 ## Abstract
 
-This project studies player identification from Go game records as a retrieval problem. A query contains a small set of games, and the system ranks anonymous candidate players represented by reference games. The approach combines coordinate-sequence Transformers trained with angular-margin identity supervision with features from KataGo HumanSL, a pretrained model of human moves. A learned policy metric and a regularized Gaussian reference model supplement the sequence ensemble. The highest achieved public score is 0.8686865. The team ranked 20 of 125 in the November 22 snapshot. These are interim competition results, not the final private ranking.
+This project studies player identification from Go game records as a retrieval problem. A query contains a small set of games, and the system ranks anonymous candidate players represented by reference games. The approach combines coordinate-sequence Transformers trained with angular-margin identity supervision with features from KataGo HumanSL, a pretrained model of human moves. A learned policy metric and a regularized Gaussian reference model supplement the sequence ensemble. The highest achieved public score is 0.8721950. The team ranked 20 of 131 at the November 24 best-restoration upload. A second task, predicting the ordinal rank of a player (D to 6D) from a bag of games, uses the same frozen HumanSL network in a bag-pooled Transformer and scored 0.7683 (rank 15 of 165). The submission period has ended; the dated public standings are not final private rankings.
 
 ## 1 Research motivation and problem
 
@@ -74,7 +74,7 @@ A small network maps standardized residual means through LayerNorm, a 512-unit G
 
 # 5 Regularized matching and experimental protocol
 
-A player’s ten reference games need not form a single tightly concentrated point. To represent within-player variation, the policy residual is standardized using training statistics and projected using regularized linear discriminant analysis. The selected model uses 128 dimensions and a within-class covariance shrunk halfway toward a scaled identity matrix. This fixed shrinkage is a modeling choice, not an estimated optimal shrinkage coefficient.
+A player’s ten reference games need not form a single tightly concentrated point. To represent within-player variation, the policy residual is standardized using training statistics and projected using regularized linear discriminant analysis. The accepted projection is fitted on 90,000 games from 6,000 training identities; it uses 128 dimensions and a within-class covariance shrunk halfway toward a scaled identity matrix. This fixed shrinkage is a modeling choice, not an estimated optimal shrinkage coefficient.
 
 In the projected space, each player has a reference mean mu_c and a diagonal game variance v_c. The scoring variance is 0.8 times the pooled reference variance plus 0.2 times the player-specific variance, with a small numerical floor. For a query mean qbar based on k games, the Gaussian score uses a quadratic distance scaled by 1/k + 1/10 and a log-variance penalty. This approximates uncertainty in two finite game-set means; dependence between games can invalidate a literal probabilistic interpretation.
 
@@ -85,7 +85,7 @@ G(q,c) = -0.5 sum_j [(qbar_j - mu_cj)^2 / {v_cj (1/k + 1/10)} + log(v_cj)]
 Scores are standardized within each query over candidate players. The accepted combination is:
 
 ```text
-S = z(S_coordinate with LM4) + 0.25 z(S_policy MLP) + 0.10 z(G)
+S = z(S_coordinate with LM4) + 0.25 z(S_policy MLP) + 0.10 z(G_expanded)
 ```
 
 ![Figure 4. Identity separation and development/audit query rows. Earlier reuse prevents a pristine-holdout claim.](../figures/validation_protocol.png)
@@ -96,27 +96,28 @@ The audit identities had already appeared in earlier experiments, and the six-en
 
 # 6 Competition experiments and results
 
-The highest achieved public score through the recorded November 22 snapshot is 0.8686865. TEAM_10990 was ranked 20 of 125 teams. The leader scored 0.9313515, leaving a gap of 0.0626650. These are interim results; the final ranking is determined by the competition’s private evaluation. The best artifact is g22_cx40.csv, whose exact SHA-256 is preserved in the evidence manifest.
+The highest achieved public score is 0.8721950, from g23_greplace.csv. The exact same prediction bytes were restored as best_872195.csv on November 24. TEAM_10990 ranked 20 of 131 at that upload. The last observed leader score was 0.9313515, a gap of 0.0591565. The submission period has ended; the dated public rank is not a verified final private ranking.
 
-![Figure 5. Five November 22 submissions. The dashed line is the preceding best; the vertical axis is truncated.](../figures/public_ablations.png)
+![Figure 5. Selected final Task 1 experiments. The dashed line is the earlier LM4 best; the vertical axis is truncated.](../figures/public_ablations.png)
 
-Configuration | Public score | Change from prior best
+Configuration | Public score | Change from LM4 best
 --- | --- | ---
-Raw reconstruction + policy scores | 0.8670060 | -0.0004599
-Learned-policy weight 0.10 | 0.8633956 | -0.0040703
-Gaussian weight 0.05 | 0.8671240 | -0.0003419
-LM4 + policy 0.25 + Gaussian 0.10 | 0.8686865 | +0.0012206
-LM6 + policy 0.25 + Gaussian 0.10 | 0.8682102 | +0.0007443
+LM4 + MLP + older Gaussian | 0.8686865 | Baseline
+Expanded cosine, weight 0.25 | 0.8672784 | -0.0014081
+Expanded Gaussian, weight 0.10 | 0.8721950 | +0.0035085
+Individual-game Gaussian likelihood | 0.8720487 | +0.0033622
+Full-covariance Gaussian | 0.8712192 | +0.0025327
+Expanded Gaussian, weight 0.15 | 0.8702170 | +0.0015305
 
-The lower learned-policy weight regressed substantially, whereas the selected small Gaussian contribution remained useful. Adding the independently trained LM4 encoder improved the accepted combination. The LM6 alternative also improved on the prior best but did not exceed the LM4 combination. These results support complementarity at these specific settings; they do not isolate every inherited component of the ensemble.
+Replacing the older 1,000-player Gaussian with the 6,000-player projection at weight 0.10 improved the best by 0.0035085. The coordinate fusion and learned-policy weight stayed fixed. Adding expanded cosine features instead reduced the website score, despite a larger local gain. Thus scaling helped through the chosen reference-distribution model, not through every use of the expanded projection.
 
-Negative results are important. On November 21, the unmodified regularized cosine metric scored 0.8649376, trunk-only matching 0.8652248, and the combined residual-statistics representation 0.8583048. Variance-aware matching at weight 0.25 nearly tied the then-best score, while reducing its weight to 0.10 produced 0.8674659. A related learned-policy checkpoint improved local retrieval despite the raw unlearned policy feature reducing the public score. A local gain therefore did not reliably predict the direction or size of a leaderboard gain.
+The three November 24 variants all scored below the accepted 0.8721950. Increasing the Gaussian weight to 0.15 improved the local audit proxy from 0.7112699 to 0.7138687 but reduced public performance by 0.0019780. These negative results illustrate selection uncertainty. The team restored the exact best CSV as the last upload; the website ranks the last uploaded file, not automatically the best historical file.
 
 # 7 Scaling study and conclusions
 
 The first policy metric used 15,000 games from 1,000 training players. The scaling study adds 5,000 distinct players and 75,000 games, for a total of 90,000 games and 6,000 training identities. Both extraction shards finished without replay errors, and the added IDs were excluded from the fixed 800-player holdout. The saved metric, training-feature shards, inference output and validation record were backed up automatically.
 
-![Figure 6. Expanded-metric audit results against the six-encoder/policy/Gaussian local proxy. This is a different scale from public evaluation.](../figures/expanded_audit.png)
+![Figure 6. Expanded-cosine local audit gain. Its public variant regressed; the accepted system instead uses expanded Gaussian matching.](../figures/expanded_audit.png)
 
 Query games | Local proxy | With expanded metric | Gain
 --- | --- | --- | ---
@@ -126,11 +127,29 @@ Query games | Local proxy | With expanded metric | Gain
 5 | 0.8917 | 0.8962 | +0.0045
 Mean | 0.7104 | 0.7191 | +0.0087
 
-The selected expanded LDA uses shrinkage 0.5, 128 dimensions and an added weight of 0.25. The improvement is positive at all four query sizes and is largest for one-game queries. Its public evaluation was pending at the reporting cutoff. The selected setting was chosen using development rows; the displayed audit is separate within this experiment, but earlier identity reuse still limits its interpretation.
+The expanded cosine study selected shrinkage 0.5, 128 dimensions and an added weight of 0.25. Local gains were positive at all four query sizes, but the LM4-based public variant scored 0.8672784, below the preceding 0.8686865. Reusing the same expanded projection for Gaussian matching at weight 0.10 produced the accepted 0.8721950. A strong local cosine gain therefore did not establish the best public use of the features.
 
-Several limitations remain. Games from the same player can be correlated, so treating repeated seeds as independent replications would give optimistic uncertainty estimates. No calibrated confidence interval or significance claim is made here. The HumanSL profile is fixed despite varying strength and context. The production ensemble and local proxy differ. Repeated public-score selection risks overfitting the public subset, and the final private result is not yet available.
+Games from one player can be correlated, so repeated episode seeds are not independent replications. No calibrated confidence interval or significance claim is made. The HumanSL profile is fixed; production and local coordinate ensembles differ. The all-player LM4 increment is excluded from the local proxy because it includes the validation identities. Repeated public feedback risks adaptive overfitting. The competition submission period has ended; a verified final private result is not included in this review.
 
-Saved-model inference from frozen parent scores and extracted policy features reproduces the accepted CSV byte for byte. A legacy base-view component still differs in lower ranks when rebuilt from raw data; the separate raw reconstruction scored 0.8670060. Thus exact cached/saved-model reproduction is established, while full raw-input equality remains unresolved. The project demonstrates an effective combination of sequence identity learning, board-conditioned residuals and conservative statistical fusion, but it has not closed the gap to the leading team.
+A compact organizer package regenerated the accepted 0.8721950 CSV byte for byte after extraction into an empty workspace. It uses declared frozen coordinate scores and extracted policy features, not only raw CSVs. A legacy base-view reconstruction still changes lower-ranked predictions; full raw-input equality remains unresolved. The result supports complementary sequence embeddings, board-conditioned residuals and conservative Gaussian fusion, while its deployment and independent-verification limits remain explicit.
+
+# 8 Task 2: predicting player rank from game records
+
+The second competition task asks for the rank class of a player from a bag of 5, 10, 15 or 20 games by that player. The ten ordered classes are D, C, B, A and 1D to 6D. A prediction earns 1 if exact and e^-1 (0.3679) if adjacent to the true class [9]; the submission has 800 test questions. Rank is an ordinal target, so the loss and the decision rule should respect class order. We train on the same 1,000,000 games, whose records carry a rank label, and validate on the 800 held-out players of Section 5 (19,200 bags).
+
+Two model families produce log-probabilities over the ten classes. (a) Bag-level language models: a rank-conditioned move Transformer (Section 4) is fine-tuned with the SORD ordinal soft-label loss [10], with target q_k proportional to exp(-|k-y|/tau), and mean-pooled over the games of a bag; six such models are averaged. (b) HumanSL sequence models: the frozen KataGo HumanSL network [5] is run under eight rank profiles (20k to 8d) over up to 250 plies of every game, giving 27 per-move features (log-probability of the played move, policy entropy, top-1 agreement, win rate, score lead). A three-layer Transformer (width 192) reads this sequence, is pooled over the bag and trained with the same SORD loss; fourteen seeds and data subsets are averaged. The blend and the expected-score decision are
+
+```text
+log P(k) = 1 * mean_bag log p_m(k) + 2 * mean_seq log p_m(k);   rank = argmax_k  sum_j e^{-|j-k|} P(j)
+```
+
+![Figure 7. Task 2 website score by development stage. HumanSL sequence features over 250 plies produced the largest single gain (0.7248 to 0.7676).](../figures/task2_progress.png)
+
+Results. The coordinate language model alone scored 0.3976, SORD fine-tuning 0.6236, and adding HumanSL game features with a gradient-boosted model 0.6915. Adding the six bag-level models and HumanSL sequence Transformers over the first 100 plies reached 0.7248. Extending HumanSL extraction to plies 101-250 raised the score to 0.7676; on held-out players the same step improved a single gradient-boosted model from 0.6859 to 0.7083. Three further models using plies 251-350 gave 0.7683, a gain that is within the noise of the blend. Three negative results matter: removing the bag-model term cost 0.0157 (0.7519), adding a fine-tuned game-level language model cost 0.0212 (0.7464), and local held-out ranking of near-equal blends did not predict the website order. The best file e13 scored 0.7683, rank 15 of 165 on November 22; this is an interim public standing, not a private result. Appendix B lists every scored variant and the reproduction path (byte-identical regeneration from saved per-model outputs).
+
+## Joint conclusion
+
+Both tasks gained most from the same external signal: board-conditioned HumanSL features, used as a residual for identity and as a per-move sequence for rank. Task-specific coordinate Transformers alone were clearly weaker for rank, and for identity they were the backbone. In both tasks, local gains of under about 0.005 did not reliably transfer to the leaderboard, so claims here are limited to measured public scores and local audits.
 
 # References
 
@@ -148,31 +167,13 @@ Saved-model inference from frozen parent scores and extracted policy features re
 
 [7] AILAB-NDHU. AICup-2026-Tutorial. Official tutorial code. https://github.com/AILAB-NDHU/AICup-2026-Tutorial. Accessed November 22, 2026.
 
-[8] Christian, J. STAT5011 Go Player Identification project evidence. Frozen competition release go-best-20261122, source commit 32a0e9f; sanitized score receipts, dataset summary, and validation JSONs are included in this course repository. These artifacts support the project-specific numerical claims.
+[8] Christian, J. STAT5011 Go project evidence. Accepted competition release go-best-20261123 and clean-workspace package go-organizer-package-20261124 (source commit 91347b4). Sanitized score receipts through November 24, dataset summaries and validation JSONs are included in this course repository. Reviewed November 25, 2026.
+
+[9] AIdea and National Dong Hwa University. AI CUP 2026 Go Playing-Strength and Style Prediction Competition, Task 2: Predicting Player Rank from Go Game Records. Official topic page, AIdea platform. Accessed November 22, 2026.
+
+[10] Diaz, R., and Marathe, A. Soft Labels for Ordinal Regression. CVPR, 2019. Source of the SORD loss used for rank classes.
 
 
 # Member contribution statement
 
 James Christian (R13921031) is the only supplied course member. Project direction and review are attributed to James Christian; coding, research and drafting were AI assisted. See the separate final page of the DOCX/PDF for the full statement.
-
-
-# Appendix A Experiment evidence
-
-```csv
-day_jst,candidate,public_score,sha256,backup_release
-2026-11-20,go20_cx40mlp.csv,0.8637488,7ec595dc65e6a27608e6f456984fc14d8e755741f2243adeb37894efce2eb38f,go-policy-sweep-20261120
-2026-11-20,go20_cx43mlp.csv,0.8638328,4942f653afeddd2ad1ad93cb48b6ce16e9ccabaa614518c3f7db8390ff2bf964,go-policy-sweep-20261120
-2026-11-20,go20_hslfp.csv,0.8601658,93887a465e18c20f008365e034300d3c0ac5e96ef5d312b5a1928d3a9c5039c8,go-policy-candidate-20261119
-2026-11-20,go20_hslmlp.csv,0.8639543,539826ab8b184c606e4ac198b9097281b9ada0efe4e1a6001b7f2e1ffad6fa5b,go-policy-metric-20261120
-2026-11-20,go20_mlp025.csv,0.8666413,311d5c470e2c0b28fdda4c5c25916f4f3e28d30dda5c8080a59e15b2d781a410,go-policy-sweep-20261120
-2026-11-21,go21_lda.csv,0.8649376,2b22215bcbbfe4ee562453bc7befd7ffb005e94e0e768713895c5baabe0e6857,go-policy-lda-20261120
-2026-11-21,go21_setmatch.csv,0.8665537,c00a134af784f4ca1678ebd7ff4f5d66e837a1e4c0be8305b4a0618c8407f9d2,go-policy-setmatch-20261121
-2026-11-21,go21_trunk.csv,0.8652248,74698d4cfbcec8e16f26a5371b6c82efa6294bdf55abe30e1834d2351c9f6392,go-policy-block-20261121
-2026-11-21,go21_stats_combined.csv,0.8583048,3daf23e75419fc40a4856e1b196af3b7c8868def32f3250275f74e42b3ffd70f,go-policy-stats-20261121
-2026-11-21,go21_damped.csv,0.8674659,14f521f345ac741284028ec424cc37c16f29a0e087f8d798eb89edaeaf34452a,go-policy-damping-20261121
-2026-11-22,g22_raw.csv,0.867006,cb6d2080dce3dd91fa13fad9743e0c4d0f395fa0e7b4263ce5c04ffcd662cb82,go-daily-candidates-20261122
-2026-11-22,g22_m010.csv,0.8633956,69564b61b8000866ee3c6d1471ab3ad55955fe575012e91ba14bc53064dcf1c7,go-daily-candidates-20261122
-2026-11-22,g22_g005.csv,0.867124,11f8e3225bf1e2df6bb125745ec0b18bfb8d71be29056482f9113d1dff22a60b,go-daily-candidates-20261122
-2026-11-22,g22_cx40.csv,0.8686865,123a07fc353790bc983a76862d10db96e03399df4160a3e7af44deb293b61fdb,go-daily-candidates-20261122
-2026-11-22,g22_cx43.csv,0.8682102,95edbe1d0ae901f06e1dea1a781b244cb408e24d74a3581fe33c55eb37711088,go-daily-candidates-20261122
-```

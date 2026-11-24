@@ -1,0 +1,11 @@
+{
+  "name": "g23_greplace.csv",
+  "sha256": "eac2f9120aff4dd74102d08b2cbcc3e2cf9009d976fd80a63890b371deacde26",
+  "state": "scored",
+  "quota_before": 4,
+  "requested_utc": "2026-11-22T16:11:04.393321+00:00",
+  "backup_release": "go-tomorrow-five-20261123",
+  "hypothesis": "Replace the old 1000-player Gaussian representation with the expanded one",
+  "public_score": 0.872195,
+  "quota_after": 5
+}

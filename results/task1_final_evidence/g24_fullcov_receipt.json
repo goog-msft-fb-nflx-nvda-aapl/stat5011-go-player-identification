@@ -1,0 +1,11 @@
+{
+  "name": "g24_fullcov.csv",
+  "sha256": "e7197dc0235f8a8b55733b56f605c95ae52591364faf540beee4e4ba824c8af7",
+  "state": "scored",
+  "quota_before": 1,
+  "requested_utc": "2026-11-23T16:41:02.856637+00:00",
+  "backup_release": "go-final-four-20261124",
+  "hypothesis": "Global within-player whitening plus .20 candidate covariance adaptation; use Woodbury precision.",
+  "public_score": 0.8712192,
+  "quota_after": 2
+}

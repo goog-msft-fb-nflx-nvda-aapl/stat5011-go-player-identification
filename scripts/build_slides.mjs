@@ -1,3 +1,4 @@
+// Historical Nov22 Task1-only builder. Current integrated rebuild: docs/BUILD.md.
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import {Presentation,PresentationFile} from '@oai/artifact-tool';

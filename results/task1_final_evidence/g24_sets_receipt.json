@@ -1,0 +1,11 @@
+{
+  "name": "g24_sets.csv",
+  "sha256": "b62b008155db534f0e0e82173335573f67e47a350feb07a913cf2e453ccf4108",
+  "state": "scored",
+  "quota_before": 0,
+  "requested_utc": "2026-11-23T16:40:45.484127+00:00",
+  "backup_release": "go-final-four-20261124",
+  "hypothesis": "Average individual query-game likelihoods instead of likelihood of the query mean.",
+  "public_score": 0.8720487,
+  "quota_after": 1
+}

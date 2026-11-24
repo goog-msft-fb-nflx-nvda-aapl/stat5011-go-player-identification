@@ -1,0 +1,16 @@
+group,tag,label,website_score,description
+progress,rank_lm1,Rank LM only,0.3976,Rank-conditioned move LM fine-tuned/pooled per game (Nov 13)
+progress,rank_ft4_sord8,SORD fine-tuned LM,0.6236,LM fine-tuned with ordinal soft labels (SORD)
+progress,rank_hsl1c,+ HumanSL GBM,0.6915,0.5 x fine-tuned LM + 1 x LightGBM on HumanSL game features
+progress,rank_hsl5,+ HumanSL v2 GBM,0.7006,v2 HumanSL features (8 profiles) + LightGBM
+progress,rank_hsl7,+ bag LMs + HumanSL sequence (100 plies),0.7248,bag-level LMs g1-g4 + HumanSL sequence Transformers s1-s3
+progress,rank_e5,250 plies / 11 seq models,0.7676,1 x mean(6 bag LMs) + 2 x mean(11 HumanSL sequence models); 250 plies
+progress,rank_e13,+ 3 models at 350 plies,0.7683,e5 + three 350-ply sequence models; best Task 2 file
+ablation,e13,e13: 14 seq models (best),0.7683,1 bag + 2 mean(14 seq)
+ablation,e5,e5: 11 seq models,0.7676,1 bag + 2 mean(11 seq)
+ablation,e4,e4: 7 seq models,0.7663,1 bag + 2 mean(7 seq)
+ablation,e6,e6: 15 seq models (+ d256 y21-y24),0.7635,e5 + four larger sequence models
+ablation,e8,e8: z11-z14 only,0.7629,1 bag + 2 mean(4 seq trained on all sources)
+ablation,e7,e7: y21-y24 only,0.7610,1 bag + 2 mean(4 larger seq)
+ablation,e10,e10: seq models only (no bag),0.7519,2 mean(seq) without bag term
+ablation,e9,e9: + 0.25 x fine-tuned game LM,0.7464,e5-style blend plus 0.25 x ft LM log-prob

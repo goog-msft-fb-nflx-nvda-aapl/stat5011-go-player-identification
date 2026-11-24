@@ -1,0 +1,11 @@
+{
+  "name": "best_872195.csv",
+  "sha256": "eac2f9120aff4dd74102d08b2cbcc3e2cf9009d976fd80a63890b371deacde26",
+  "state": "scored",
+  "quota_before": 3,
+  "requested_utc": "2026-11-23T16:42:55.704658+00:00",
+  "backup_release": "go-best-20261123",
+  "hypothesis": "User explicitly requested restoring exact verified best after three lower-scoring experiments. No model or prediction changes.",
+  "public_score": 0.872195,
+  "quota_after": 4
+}

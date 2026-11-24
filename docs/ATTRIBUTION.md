@@ -18,10 +18,10 @@ The project used ChatGPT/Codex, Claude and Gemini for development support, resea
 
 HumanSL source is pinned to commit `d91ea855110dae533f0aada947b2b7d78cc8a4e1`. HumanSL checkpoint SHA-256 is `84b23476b56a73a775a0f09bad7d1c5c435690adb343aa851e80bf198c0c8b27`. Preserve the original network copyright notice in KATAGO_NETWORK_LICENSE.txt; the source/model are not relicensed by this project. The cited papers provide motivation, not directly comparable Go leaderboard results.
 
-The model source originates in the private competition repository at release `go-best-20261122` (source commit `32a0e9f`). `source_manifest.json` records hashes. Operational upload/authentication/backup helpers have been excluded from the course model-source copy. Authorized raw inputs and large checkpoints remain external.
+The model source originates in the private competition repository at accepted release `go-best-20261123` and organizer package `go-organizer-package-20261124` (source commit `91347b4`). `source_manifest.json` records hashes. Operational upload/authentication/backup helpers have been excluded from the course model-source copy. Authorized raw inputs and large checkpoints remain external.
 
 ## Figures and evidence
 
 All figures were created for this project. PNGs are display copies; SVGs retain editable vector content. Dataset and score charts use `results/*.json` and `results/submissions.csv`. Schematic pipeline diagrams do not depict hidden labels. Charts use truncated axes where stated, and local scores are distinguished from official public evaluations.
 
-The headline reports the highest achieved public score. No separate latest-upload score is used as a headline metric. Rank 20/125 is a dated team-standing snapshot. No final private result, medal, leading-team architecture, or statistical significance is claimed.
+The headline reports the highest achieved public score. No separate latest-upload score is used as a headline metric. Task 1 rank20/131 is the November24 best-restoration snapshot, not a verified final private rank. No final private result, medal, leading-team architecture, or statistical significance is claimed.

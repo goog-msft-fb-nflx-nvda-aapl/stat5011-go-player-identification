@@ -1,0 +1,111 @@
+{
+  "results": {
+    "baseline": {
+      "development": {
+        "by_query_games": {
+          "1": 0.4794033243610317,
+          "2": 0.738371263932855,
+          "3": 0.8310857360712616,
+          "5": 0.9163744535996537
+        },
+        "mean": 0.7413086944912005
+      },
+      "audit": {
+        "by_query_games": {
+          "1": 0.4619923063102792,
+          "2": 0.690120372774112,
+          "3": 0.8013312194142834,
+          "5": 0.8916357791581809
+        },
+        "mean": 0.7112699194142139
+      }
+    },
+    "weight": {
+      "development": {
+        "by_query_games": {
+          "1": 0.4852805239416432,
+          "2": 0.740594109452787,
+          "3": 0.8328306814354163,
+          "5": 0.9157300032808191
+        },
+        "mean": 0.7436088295276664
+      },
+      "audit": {
+        "by_query_games": {
+          "1": 0.4659700148287623,
+          "2": 0.6939735482658733,
+          "3": 0.8034962561979556,
+          "5": 0.8920351675820968
+        },
+        "mean": 0.713868746718672
+      }
+    },
+    "fullcov": {
+      "development": {
+        "by_query_games": {
+          "1": 0.4790598077920459,
+          "2": 0.7378916103335448,
+          "3": 0.8303716541887545,
+          "5": 0.9143909503247902
+        },
+        "mean": 0.7404285056597839
+      },
+      "audit": {
+        "by_query_games": {
+          "1": 0.46247334565793113,
+          "2": 0.6909094445203083,
+          "3": 0.8006225908416447,
+          "5": 0.8897064482152155
+        },
+        "mean": 0.7109279573087749
+      }
+    },
+    "colour": {
+      "development": {
+        "by_query_games": {
+          "1": 0.4774855077971424,
+          "2": 0.7370935163515833,
+          "3": 0.8313588367150603,
+          "5": 0.913385319701176
+        },
+        "mean": 0.7398307951412405
+      },
+      "audit": {
+        "by_query_games": {
+          "1": 0.45899756240308004,
+          "2": 0.6892424909259215,
+          "3": 0.8000237203529652,
+          "5": 0.8911462699904596
+        },
+        "mean": 0.7098525109181066
+      }
+    },
+    "sets": {
+      "development": {
+        "by_query_games": {
+          "1": 0.4794033243610317,
+          "2": 0.7393841910205234,
+          "3": 0.8303569729459819,
+          "5": 0.9159950017997402
+        },
+        "mean": 0.7412848725318193
+      },
+      "audit": {
+        "by_query_games": {
+          "1": 0.4619923063102792,
+          "2": 0.6898463650871253,
+          "3": 0.8025748962452773,
+          "5": 0.8899623347605641
+        },
+        "mean": 0.7110939756008114
+      }
+    }
+  },
+  "limitations": [
+    "Six original heldout coordinate encoders form the local proxy. LM4 increment excluded because all-player training includes these identities.",
+    "Four configurations fixed before audit; no audit-based tuning. Previously reused audit identities are not a pristine holdout.",
+    "Same 600-player pool, fixed 300 development / 300 audit query identities, five ten-reference splits and query sizes 1/2/3/5.",
+    "Colour variant keeps effective reference count ten for all candidates, an approximation isolating conditional means.",
+    "Only updated 600-player pools are changed; original-family predictions stay frozen."
+  ]
+}
