@@ -19,6 +19,6 @@ with zipfile.ZipFile(R/'slides/STAT5011_Final_Presentation.pptx') as z:
 r=PdfReader(R/'report/STAT5011_Final_Report.pdf');assert len(r.pages)==12
 for i,expected in [(7,'8 Task 2'),(8,'References'),(9,'Appendix A'),(10,'Appendix B'),(11,'Member contribution')]:assert expected in r.pages[i].extract_text()
 assert '.8721950' in r.pages[0].extract_text() and '0.8721950' in r.pages[5].extract_text()
-t2=list(csv.DictReader((R/'results/task2_scores.csv').open()));assert max(float(x['website_score']) for x in t2)==.7683
-assert hashlib.sha256((R/'results/task2_best_prediction.csv').read_bytes()).hexdigest()=='09c1a5a5dce8eef313486d9d48d643edade8c91906469285bfa539600bb59d0d'
+t2=list(csv.DictReader((R/'results/task2_scores.csv').open()));assert max(float(x['website_score']) for x in t2)==.7692
+assert hashlib.sha256((R/'results/task2_best_prediction.csv').read_bytes()).hexdigest()=='2926dbf149c255f4df47e00a046f3ecbad64c09c7ee2ecc93e678da23cd2ef98'
 print('Verified Task1: 24 scored uploads, best .8721950, prediction/source hashes, 30 slides and 8 main report pages. Task2 evidence checks preserved.')

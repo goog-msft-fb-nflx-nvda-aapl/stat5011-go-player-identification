@@ -5,8 +5,12 @@ progress,rank_hsl1c,+ HumanSL GBM,0.6915,0.5 x fine-tuned LM + 1 x LightGBM on H
 progress,rank_hsl5,+ HumanSL v2 GBM,0.7006,v2 HumanSL features (8 profiles) + LightGBM
 progress,rank_hsl7,+ bag LMs + HumanSL sequence (100 plies),0.7248,bag-level LMs g1-g4 + HumanSL sequence Transformers s1-s3
 progress,rank_e5,250 plies / 11 seq models,0.7676,1 x mean(6 bag LMs) + 2 x mean(11 HumanSL sequence models); 250 plies
-progress,rank_e13,+ 3 models at 350 plies,0.7683,e5 + three 350-ply sequence models; best Task 2 file
-ablation,e13,e13: 14 seq models (best),0.7683,1 bag + 2 mean(14 seq)
+progress,rank_e13,+ 3 models at 350 plies,0.7683,e5 + three 350-ply sequence models
+progress,rank_f2,"+ 5 sources, GRU + Transformer (final)",0.7692,"1 x mean(6 bag LMs) + 2 x mean(8 sequence models: 4 BiGRU + 4 Transformer) trained on 138,204 additional games; final Task 2 file"
+ablation,f2,f2: 8 new seq models (best),0.7692,1 bag + 2 mean(4 GRU + 4 Transformer trained on five game sources)
+ablation,f3,f3: 27 seq models,0.7683,"all 14 + 5 GRU + 8 new sequence models, 1 bag + 2 mean"
+ablation,f4,"f4: f3, new models x2",0.7651,"bag weight 1.5; old 19 models weight 1, new 8 models weight 2"
+ablation,e13,e13: 14 seq models,0.7683,1 bag + 2 mean(14 seq)
 ablation,e5,e5: 11 seq models,0.7676,1 bag + 2 mean(11 seq)
 ablation,e4,e4: 7 seq models,0.7663,1 bag + 2 mean(7 seq)
 ablation,e6,e6: 15 seq models (+ d256 y21-y24),0.7635,e5 + four larger sequence models

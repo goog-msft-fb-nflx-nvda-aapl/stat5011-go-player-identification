@@ -9,7 +9,7 @@ PAGES = [{'title': 'Identifying Go Players and Predicting Their Rank from Game R
               'KataGo HumanSL, a pretrained model of human moves. A learned policy metric and a regularized Gaussian reference '
               'model supplement the sequence ensemble. The highest achieved public score is 0.8721950. The team ranked 20 of 131 '
               'at the November 24 best-restoration upload. A second task, predicting the ordinal rank of a player (D to 6D) from '
-              'a bag of games, uses the same frozen HumanSL network in a bag-pooled Transformer and scored 0.7683 (rank 15 of 165). '
+              'a bag of games, uses the same frozen HumanSL network in bag-pooled sequence models and scored 0.7692 (rank 19 of 175). '
               'The submission period has ended; the dated public standings are not final private rankings.'),
              ('h', '1 Research motivation and problem'),
              ('p',
@@ -247,9 +247,9 @@ PAGES = [{'title': 'Identifying Go Players and Predicting Their Rank from Game R
               'target q_k proportional to exp(-|k-y|/tau), and mean-pooled over the games of a bag; six such models are '
               'averaged. (b) HumanSL sequence models: the frozen KataGo HumanSL network [5] is run under eight rank profiles '
               '(20k to 8d) over up to 250 plies of every game, giving 27 per-move features (log-probability of the played move, '
-              'policy entropy, top-1 agreement, win rate, score lead). A three-layer Transformer (width 192) reads this '
-              'sequence, is pooled over the bag and trained with the same SORD loss; fourteen seeds and data subsets are '
-              'averaged. The blend and the expected-score decision are'),
+              'policy entropy, top-1 agreement, win rate, score lead). A sequence encoder (a three-layer Transformer or a two-layer bidirectional GRU, width 192) reads this '
+              'sequence, is pooled over the bag and trained with the same SORD loss. The final file averages eight such models '
+              '(four GRU, four Transformer; seeds 71-78) trained on five game sources, including 138,204 additional games. The blend and the expected-score decision are'),
              ('eq', 'log P(k) = 1 * mean_bag log p_m(k) + 2 * mean_seq log p_m(k);   rank = argmax_k  sum_j e^{-|j-k|} P(j)'),
              ('fig',
               'task2_progress',
@@ -261,10 +261,13 @@ PAGES = [{'title': 'Identifying Go Players and Predicting Their Rank from Game R
               'features with a gradient-boosted model 0.6915. Adding the six bag-level models and HumanSL sequence Transformers '
               'over the first 100 plies reached 0.7248. Extending HumanSL extraction to plies 101-250 raised the score to '
               '0.7676; on held-out players the same step improved a single gradient-boosted model from 0.6859 to 0.7083. Three '
-              'further models using plies 251-350 gave 0.7683, a gain that is within the noise of the blend. Three negative '
+              'further models using plies 251-350 gave 0.7683, a gain that is within the noise of the blend. The final file f2 '
+              'replaces the sequence models by eight new ones (GRU and Transformer encoders) trained on 138,204 additional '
+              'games of the non-held-out players and scored 0.7692 (+0.0009 over e13, again within noise); adding those '
+              'models to the old ones (f3, 27 models) gave 0.7683, and doubling their weight (f4) 0.7651. Three negative '
               'results matter: removing the bag-model term cost 0.0157 (0.7519), adding a fine-tuned game-level language model '
               'cost 0.0212 (0.7464), and local held-out ranking of near-equal blends did not predict the website order. The best '
-              'file e13 scored 0.7683, rank 15 of 165 on November 22; this is an interim public standing, not a private result. '
+              'file f2 scored 0.7692, rank 19 of 175 on November 25; this is a public standing, not a private result. '
               'Appendix B lists every scored variant and the reproduction path (byte-identical regeneration from saved per-model '
               'outputs).'),
              ('h', 'Joint conclusion'),

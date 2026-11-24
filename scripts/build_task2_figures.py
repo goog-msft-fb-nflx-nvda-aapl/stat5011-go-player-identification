@@ -28,7 +28,7 @@ fig,ax=plt.subplots(figsize=(10,3.0));ax.axis('off');ax.set(xlim=(-.02,1.02),yli
 def box(x,y,w,h,t,c=blue):
  ax.add_patch(FancyBboxPatch((x,y),w,h,boxstyle='round,pad=0.012,rounding_size=0.008',facecolor='white',edgecolor=c,linewidth=1.5));ax.text(x+w/2,y+h/2,t,ha='center',va='center',fontsize=10)
 def arr(a,b):ax.annotate('',xy=b,xytext=a,arrowprops=dict(arrowstyle='->',lw=1.5,color=gray))
-box(.00,.38,.13,.28,'Bag of 5-20\ngames of one\nplayer');box(.21,.68,.27,.27,'Rank-conditioned move LM\n+ bag-level SORD head\n(6 models)',blue);box(.21,.02,.27,.33,'Frozen HumanSL, 8 profiles\nper-move features\nbag-pooled Transformer\n(14 models)',teal)
+box(.00,.38,.13,.28,'Bag of 5-20\ngames of one\nplayer');box(.21,.68,.27,.27,'Rank-conditioned move LM\n+ bag-level SORD head\n(6 models)',blue);box(.21,.02,.27,.33,'Frozen HumanSL, 8 profiles\nper-move features\nbag-pooled GRU / Transformer\n(8 models)',teal)
 box(.56,.38,.25,.28,'1 x mean log-prob (bag)\n+ 2 x mean log-prob (seq)',orange);box(.87,.38,.13,.28,'Expected-\nscore decode\nD ... 6D')
 arr((.13,.55),(.21,.78));arr((.13,.49),(.21,.22));arr((.48,.78),(.56,.60));arr((.48,.22),(.56,.44));arr((.80,.52),(.87,.52))
 ax.text(0,-.12,'Task 2 system; log-probabilities over ten ordered rank classes are averaged within each family, then blended.',fontsize=9,color=gray)

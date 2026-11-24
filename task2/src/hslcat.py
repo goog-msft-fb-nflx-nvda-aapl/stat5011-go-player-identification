@@ -3,6 +3,10 @@ import numpy as np,os
 NP=int(os.environ.get('HSL_PLIES','250'))
 D=(__import__('os').environ.get('GO_ROOT','/home/jtan/solardefect/go_20261113')+'/')
 def load_full(name,nsh=3):
+    if name=='trainsel5':  # plies 1-250 extracted in one pass, 3 interleaved shards (hsl_extract3 --start 0 --maxm 250)
+        sh=[np.load(D+f'results/hsl5_trainsel5_s{k}.npy',mmap_mode='r') for k in range(nsh)];G=sum(len(x) for x in sh);out=np.full((G,NP,sh[0].shape[2]),np.nan,np.float16)
+        for k in range(nsh):out[k::nsh,:250]=sh[k]
+        out[:,:,-1]=np.where(np.isnan(out[:,:,0]),-1,out[:,:,-1]);return out
     a=np.load(D+f'results/hsl2_{name}.npy',mmap_mode='r');G=len(a);out=np.full((G,NP,a.shape[2]),np.nan,np.float16);out[:,:100]=a
     out[:,:,-1]=np.where(np.isnan(out[:,:,0]),-1,out[:,:,-1])
     for k in range(nsh):

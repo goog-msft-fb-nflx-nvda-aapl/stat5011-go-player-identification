@@ -94,6 +94,19 @@ def games_from_src(src, n):
             m = M[g]; k = int(np.argmax(m == 65535)) if (m == 65535).any() else len(m)
             out.append(([(int(C[g, j]), -1 if m[j] == 361 else int(m[j]) // 19, -1 if m[j] == 361 else int(m[j]) % 19) for j in range(k)], int(hd[g])))
         return out, idx
+    if src == "trainsel5":   # more games for the non-hold-out players: up to 40/player not already in trainsel..trainsel4 (plies 1-250 extracted in one pass by hsl_extract3 --start 0 --maxm 250)
+        z = np.load(D + "data/train_arr.npz"); M, C, hd, P = z["M"], z["C"], z["hd"], z["P"]
+        used = np.zeros(len(P), bool)
+        for q in ("trainsel", "trainsel2", "trainsel3", "trainsel4"): used[np.load(D + f"results/hsl2_{q}_idx.npy")] = True
+        hold = np.random.default_rng(1234).choice(np.unique(P), 800, replace=False); order = np.argsort(P, kind="stable"); sp = P[order]; bounds = np.searchsorted(sp, np.arange(P.max() + 2)); r5 = np.random.default_rng(55); idx = []
+        for p in np.setdiff1d(np.unique(P), hold):
+            g = order[bounds[p]:bounds[p + 1]]; g = g[~used[g]]
+            if len(g): idx += list(r5.choice(g, min(40, len(g)), replace=False))
+        idx = np.array(idx); out = []
+        for g in idx:
+            m = M[g]; k = int(np.argmax(m == 65535)) if (m == 65535).any() else len(m)
+            out.append(([(int(C[g, j]), -1 if m[j] == 361 else int(m[j]) // 19, -1 if m[j] == 361 else int(m[j]) % 19) for j in range(k)], int(hd[g])))
+        return out, idx
     if src.startswith("pilotlong"):   # pilot: 200 hold-out players x 20 games per shard k (disjoint), for 250-ply extraction
         k = int(src[len("pilotlong"):]); z = np.load(D + "data/train_arr.npz"); M, C, hd, P = z["M"], z["C"], z["hd"], z["P"]
         hold = np.random.default_rng(1234).choice(np.unique(P), 800, replace=False); cnt = np.bincount(P, minlength=P.max() + 1)

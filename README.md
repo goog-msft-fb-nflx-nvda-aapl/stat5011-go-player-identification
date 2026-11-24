@@ -40,9 +40,9 @@ The headline is the highest achieved public score. The competition submission pe
 
 | Item | Recorded result |
 |---|---:|
-| Highest achieved public score | **0.7683** (`results/task2_best_prediction.csv`) |
-| Rank at snapshot | 15 / 165 (November 22, 2026 JST) |
-| Method | 6 bag-level SORD language models + 14 HumanSL sequence Transformers, blend 1:2, expected-score decoding |
+| Highest achieved public score | **0.7692** (`results/task2_best_prediction.csv`) |
+| Rank at snapshot | 19 / 175 (November 25, 2026 JST; public) |
+| Method | 6 bag-level SORD language models + 8 HumanSL sequence models (4 GRU, 4 Transformer, 5 game sources), blend 1:2, expected-score decoding |
 
 Scores of all variants: `results/task2_scores.csv`. Code, seeds, saved per-model outputs and the byte-identical CPU regeneration path: [`task2/REPRODUCE_TASK2_BEST.md`](task2/REPRODUCE_TASK2_BEST.md). Figures: `figures/task2_*.png`. Builders: `scripts/build_task2_figures.py`, `scripts/build_task2_slides.py`.
 
